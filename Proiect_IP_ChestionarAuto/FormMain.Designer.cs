@@ -35,18 +35,19 @@
             // 
             // button_Start
             // 
-            this.button_Start.Location = new System.Drawing.Point(451, 181);
+            this.button_Start.Location = new System.Drawing.Point(451, 99);
             this.button_Start.Name = "button_Start";
-            this.button_Start.Size = new System.Drawing.Size(154, 69);
+            this.button_Start.Size = new System.Drawing.Size(193, 112);
             this.button_Start.TabIndex = 0;
             this.button_Start.Text = "Incepe";
             this.button_Start.UseVisualStyleBackColor = true;
+            this.button_Start.Click += new System.EventHandler(this.button_Start_Click);
             // 
             // button_About
             // 
-            this.button_About.Location = new System.Drawing.Point(451, 275);
+            this.button_About.Location = new System.Drawing.Point(451, 217);
             this.button_About.Name = "button_About";
-            this.button_About.Size = new System.Drawing.Size(154, 71);
+            this.button_About.Size = new System.Drawing.Size(193, 110);
             this.button_About.TabIndex = 1;
             this.button_About.Text = "Despre";
             this.button_About.UseVisualStyleBackColor = true;
@@ -54,9 +55,9 @@
             // 
             // button_Exit
             // 
-            this.button_Exit.Location = new System.Drawing.Point(451, 375);
+            this.button_Exit.Location = new System.Drawing.Point(451, 333);
             this.button_Exit.Name = "button_Exit";
-            this.button_Exit.Size = new System.Drawing.Size(154, 77);
+            this.button_Exit.Size = new System.Drawing.Size(193, 110);
             this.button_Exit.TabIndex = 2;
             this.button_Exit.Text = "Iesire";
             this.button_Exit.UseVisualStyleBackColor = true;

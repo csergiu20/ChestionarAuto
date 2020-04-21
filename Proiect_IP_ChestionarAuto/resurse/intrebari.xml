@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<intrebari>
+  <intrebare id="1">
+    <titlu>Cat aveti lungimea nasului?</titlu>
+    <buton id="1">10 cm</buton>
+    <buton id="2">20 cm</buton>
+    <buton id="3">30 cm</buton>
+    <buton id="4">40 cm</buton>
+    <id_raspuns>1</id_raspuns>
+    <imagine>nas.jpg</imagine>
+  </intrebare>
+  <intrebare id="2">
+    <titlu>De ce mancati covrigi?</titlu>
+    <buton id="1">De pofta</buton>
+    <buton id="2">Erau la reducere</buton>
+    <buton id="3">De mere</buton>
+    <buton id="4">Nu mananc yo sarakiile astea</buton>
+    <id_raspuns>4</id_raspuns>
+    <imagine>none.jpg</imagine>
+  </intrebare>
+</intrebari>

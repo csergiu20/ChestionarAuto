@@ -25,12 +25,19 @@ namespace Proiect_IP_ChestionarAuto
 
         private void button_Exit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void button_About_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Proiect IP\nCorban Sergiu-Stefan\nVelovici Florin-Cristian\n1309B", "Despre");
+        }
+
+        private void button_Start_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormIntrebari fi = new FormIntrebari();
+            fi.ShowDialog();
         }
     }
 }
