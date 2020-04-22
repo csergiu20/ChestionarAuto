@@ -8,12 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-// Proiect IP
-// Chestionar Auto
-// Corban Sergiu-Stefan
-// Velovici Florin-Cristian
-// 1309B
-
 namespace Proiect_IP_ChestionarAuto
 {
     public partial class FormMain : Form
@@ -35,9 +29,10 @@ namespace Proiect_IP_ChestionarAuto
 
         private void button_Start_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormIntrebari fi = new FormIntrebari();
+            Hide();
+            var fi = new FormIntrebari();
             fi.ShowDialog();
+            Show();
         }
     }
 }

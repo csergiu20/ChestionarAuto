@@ -2,50 +2,50 @@
 <intrebari>
   <intrebare id="1">
     <titlu>unu</titlu>
-    <buton>a</buton>
-    <buton>b</buton>
-    <buton>b</buton>
-    <id_raspuns>1</id_raspuns>
+    <optiune>a</optiune>
+    <optiune>b</optiune>
+    <optiune>b</optiune>
+    <raspuns>1</raspuns>
     <imagine>none.jpg</imagine>
   </intrebare>
   <intrebare id="2">
     <titlu>doi</titlu>
-    <buton>a</buton>
-    <buton>b</buton>
-    <buton>b</buton>
-    <id_raspuns>1</id_raspuns>
+    <optiune>a</optiune>
+    <optiune>b</optiune>
+    <optiune>b</optiune>
+    <raspuns>1</raspuns>
     <imagine>none.jpg</imagine>
   </intrebare>
   <intrebare id="3">
     <titlu>trei</titlu>
-    <buton>a</buton>
-    <buton>b</buton>
-    <buton>b</buton>
-    <id_raspuns>1</id_raspuns>
+    <optiune>a</optiune>
+    <optiune>b</optiune>
+    <optiune>b</optiune>
+    <raspuns>1</raspuns>
     <imagine>none.jpg</imagine>
   </intrebare>
   <intrebare id="4">
     <titlu>patru</titlu>
-    <buton>a</buton>
-    <buton>b</buton>
-    <buton>b</buton>
-    <id_raspuns>1</id_raspuns>
+    <optiune>a</optiune>
+    <optiune>b</optiune>
+    <optiune>b</optiune>
+    <raspuns>1</raspuns>
     <imagine>none.jpg</imagine>
   </intrebare>
   <intrebare id="5">
     <titlu>cinci</titlu>
-    <buton>a</buton>
-    <buton>b</buton>
-    <buton>b</buton>
-    <id_raspuns>1</id_raspuns>
+    <optiune>a</optiune>
+    <optiune>b</optiune>
+    <optiune>b</optiune>
+    <raspuns>1</raspuns>
     <imagine>none.jpg</imagine>
   </intrebare>
   <intrebare id="6">
     <titlu>sase</titlu>
-    <buton>a</buton>
-    <buton>b</buton>
-    <buton>b</buton>
-    <id_raspuns>1</id_raspuns>
+    <optiune>a</optiune>
+    <optiune>b</optiune>
+    <optiune>b</optiune>
+    <raspuns>1</raspuns>
     <imagine>none.jpg</imagine>
   </intrebare>
 </intrebari>

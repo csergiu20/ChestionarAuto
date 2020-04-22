@@ -8,150 +8,74 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+
 namespace Proiect_IP_ChestionarAuto
 {
     public partial class FormIntrebari : Form
     {
-        int raspuns_corect_curent = -1;
-        int NUMARATORINTREBARI = 0;
+        private const int TotalIntrebariForm = 3;
 
-        const int total_intrebari = 3;
-        const int total_intrebari_xml = 6;
+        private readonly List<Intrebare> _intrebari;
+        private int _indexIntrebare = 0;
 
-        List<int> numere_extrase_random = new List<int>();
-        int list_index = 0;
+        private int _raspunsCorectCurent = 0;
 
-        const string path_imagini = "$(SolutionDir)\\..\\..\\..\\resurse\\imagini\\";
-        const string path_intrebari = "$(SolutionDir)\\..\\..\\..\\resurse\\intrebari.xml";
-
-        int raspunsuri_corecte = 0;
-        int raspunsuri_gresite = 0;
-        int procentaj = 0;
+        private int _raspunsuriCorecte = 0;
+        private int _raspunsuriGresite = 0;
+        private int _procentaj = 0;
 
         public FormIntrebari()
         {
             InitializeComponent();
-            ExtragereIntrebariRandom();
-            ExtragereIntrebariXml();
-            InitializareButoaneBackNext();
+
+            var qXml = new ProcesareXml();
+            var _totalIntrebariXml = qXml.ExtragereTotalIntrebariXml();
+            var _numereExtraseRandom = RandGenerator.ExtragereNumereRandom(_totalIntrebariXml, TotalIntrebariForm);
+            _intrebari = qXml.ExtragereIntrebariXml(_numereExtraseRandom);
+
+            AfisareIntrebariForm();
         }
 
-        private void verficaIntrebareEvent(object sender, EventArgs e)
+        private void verficaRaspunsEvent(object sender, EventArgs e)
         {
             var senderObject = (Button)sender;
-            int buttontag = Convert.ToInt32(senderObject.Tag);
+            int buttonTag = Convert.ToInt32(senderObject.Tag);
 
-            if (buttontag == raspuns_corect_curent)
+            if (buttonTag == _raspunsCorectCurent)
             {
-                raspunsuri_corecte++;
-                label_rasp_corecte.Text = raspunsuri_corecte.ToString();
+                _raspunsuriCorecte++;
+                label_rasp_corecte.Text = _raspunsuriCorecte.ToString();
             }
             else
             {
-                raspunsuri_gresite++;
-                label_rasp_gresite.Text = raspunsuri_gresite.ToString();
+                _raspunsuriGresite++;
+                label_rasp_gresite.Text = _raspunsuriGresite.ToString();
             }
-           
-            procentaj = (int)Math.Round((double)(raspunsuri_corecte * 100) / total_intrebari);
-        
-            list_index++;
-            if (NUMARATORINTREBARI < 3)
+
+            _procentaj = (int)Math.Round((double)(_raspunsuriCorecte * 100) / TotalIntrebariForm);
+
+            _indexIntrebare++;
+
+            if (_indexIntrebare < TotalIntrebariForm)
             {
-                ExtragereIntrebariXml();
+                AfisareIntrebariForm();
             }
-            InitializareButoaneBackNext();
-        }
-
-        private void ExtragereIntrebariRandom()
-        {
-            Random rnd = new Random();
-
-            for (int i = 0; i < total_intrebari; i++)
+            else
             {
-                int temp = 0;
-                temp = rnd.Next(1, total_intrebari_xml + 1);
-
-                while (numere_extrase_random.Contains(temp))
-                {
-                    temp = rnd.Next(1, total_intrebari_xml + 1);
-                }
-
-                numere_extrase_random.Add(temp);
+                Hide();
+                MessageBox.Show(_procentaj.ToString() + "% Corecte!", "Scor");
+                Close();
             }
         }
 
-        private void ExtragereIntrebariXml()
+        private void AfisareIntrebariForm()
         {
-            XmlDocument document = new XmlDocument();
-            document.Load(path_intrebari);
-
-            foreach (XmlNode node in document.DocumentElement)
-            {
-                int id_intrebare_xml = Int32.Parse(node.Attributes[0].InnerText);
-
-                if (id_intrebare_xml == numere_extrase_random[list_index])
-                {
-                    NUMARATORINTREBARI++;
-                    id_intrebare_xml = 1;
-                    labelIntrebari.Text = node.ChildNodes[0].InnerText;
-                    button1.Text = node.ChildNodes[1].InnerText;
-                    button2.Text = node.ChildNodes[2].InnerText;
-                    button3.Text = node.ChildNodes[3].InnerText;
-                    pictureBoxIntrebari.Image = Image.FromFile(path_imagini + node.ChildNodes[5].InnerText);
-
-                    raspuns_corect_curent = Int32.Parse(node.ChildNodes[4].InnerText);
-                }
-
-            }
-        }
-
-        private void InitializareButoaneBackNext()
-        {
-            //if (id_intrebare_curenta == total_intrebari)
-            //{
-            //    button_Next.Enabled = false;
-            //    button_Back.Enabled = true;
-            //}
-            //else if (id_intrebare_curenta == 1)
-            //{
-            //    button_Next.Enabled = true;
-            //    button_Back.Enabled = false;
-            //}
-            //else
-            //{
-            //    button_Next.Enabled = true;
-            //    button_Back.Enabled = true;
-            //}
-        }
-
-        private void button_Next_Click(object sender, EventArgs e)
-        {
-            
-            //if (NUMARATORINTREBARI < 3 && NUMARATORINTREBARI >= 0)
-            //{
-            //    list_index++;
-            //    ExtragereIntrebariXml();
-            //    InitializareButoaneBackNext();
-                
-
-            //}
-        }
-
-        private void button_Back_Click(object sender, EventArgs e)
-        {
-            //if (NUMARATORINTREBARI > 2)
-            //{
-            //    NUMARATORINTREBARI--;
-            //}
-            //if (NUMARATORINTREBARI < 3 && NUMARATORINTREBARI >= 0)
-            //{
-            //    if (NUMARATORINTREBARI != 0)
-            //    {
-            //        list_index--;
-            //    }
-            //    ExtragereIntrebariXml();
-            //    InitializareButoaneBackNext();
-            //}
+            labelIntrebari.Text = _intrebari[_indexIntrebare].Titlu;
+            button1.Text = _intrebari[_indexIntrebare].OptiuneA;
+            button2.Text = _intrebari[_indexIntrebare].OptiuneB;
+            button3.Text = _intrebari[_indexIntrebare].OptiuneC;
+            _raspunsCorectCurent = _intrebari[_indexIntrebare].Raspuns;
+            pictureBoxIntrebari.Image = Image.FromFile(_intrebari[_indexIntrebare].Imagine);
         }
     }
 }

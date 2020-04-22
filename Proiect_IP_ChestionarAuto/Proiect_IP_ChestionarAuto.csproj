@@ -58,8 +58,11 @@
     <Compile Include="FormIntrebari.Designer.cs">
       <DependentUpon>FormIntrebari.cs</DependentUpon>
     </Compile>
+    <Compile Include="Intrebare.cs" />
+    <Compile Include="ProcesareXml.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandGenerator.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,7 +92,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="resurse\imagini\nas.jpg" />
     <Content Include="resurse\imagini\none.jpg" />
     <Content Include="resurse\intrebari.xml" />
   </ItemGroup>

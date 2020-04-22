@@ -33,8 +33,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button_Back = new System.Windows.Forms.Button();
-            this.button_Next = new System.Windows.Forms.Button();
             this.label_A = new System.Windows.Forms.Label();
             this.label_B = new System.Windows.Forms.Label();
             this.label_C = new System.Windows.Forms.Label();
@@ -57,7 +55,7 @@
             // 
             this.labelIntrebari.Location = new System.Drawing.Point(79, 557);
             this.labelIntrebari.Name = "labelIntrebari";
-            this.labelIntrebari.Size = new System.Drawing.Size(768, 79);
+            this.labelIntrebari.Size = new System.Drawing.Size(1060, 79);
             this.labelIntrebari.TabIndex = 1;
             this.labelIntrebari.Text = "intrebare";
             this.labelIntrebari.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,7 +69,7 @@
             this.button1.Tag = "1";
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.verficaIntrebareEvent);
+            this.button1.Click += new System.EventHandler(this.verficaRaspunsEvent);
             // 
             // button2
             // 
@@ -82,7 +80,7 @@
             this.button2.Tag = "2";
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.verficaIntrebareEvent);
+            this.button2.Click += new System.EventHandler(this.verficaRaspunsEvent);
             // 
             // button3
             // 
@@ -93,29 +91,7 @@
             this.button3.Tag = "3";
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.verficaIntrebareEvent);
-            // 
-            // button_Back
-            // 
-            this.button_Back.Enabled = false;
-            this.button_Back.Location = new System.Drawing.Point(891, 557);
-            this.button_Back.Name = "button_Back";
-            this.button_Back.Size = new System.Drawing.Size(121, 79);
-            this.button_Back.TabIndex = 5;
-            this.button_Back.Text = "< Inapoi";
-            this.button_Back.UseVisualStyleBackColor = true;
-            this.button_Back.Click += new System.EventHandler(this.button_Back_Click);
-            // 
-            // button_Next
-            // 
-            this.button_Next.Enabled = false;
-            this.button_Next.Location = new System.Drawing.Point(1018, 557);
-            this.button_Next.Name = "button_Next";
-            this.button_Next.Size = new System.Drawing.Size(121, 79);
-            this.button_Next.TabIndex = 6;
-            this.button_Next.Text = "Inainte >";
-            this.button_Next.UseVisualStyleBackColor = true;
-            this.button_Next.Click += new System.EventHandler(this.button_Next_Click);
+            this.button3.Click += new System.EventHandler(this.verficaRaspunsEvent);
             // 
             // label_A
             // 
@@ -192,8 +168,6 @@
             this.Controls.Add(this.label_C);
             this.Controls.Add(this.label_B);
             this.Controls.Add(this.label_A);
-            this.Controls.Add(this.button_Next);
-            this.Controls.Add(this.button_Back);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -214,8 +188,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button_Back;
-        private System.Windows.Forms.Button button_Next;
         private System.Windows.Forms.Label label_A;
         private System.Windows.Forms.Label label_B;
         private System.Windows.Forms.Label label_C;
