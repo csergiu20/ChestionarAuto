@@ -2,20 +2,26 @@
 <intrebari>
   <intrebare id="1">
     <titlu>Cat aveti lungimea nasului?</titlu>
-    <buton id="1">10 cm</buton>
-    <buton id="2">20 cm</buton>
-    <buton id="3">30 cm</buton>
-    <buton id="4">40 cm</buton>
+    <buton id="A">10 cm</buton>
+    <buton id="B">20 cm</buton>
+    <buton id="C">30 cm</buton>
     <id_raspuns>1</id_raspuns>
     <imagine>nas.jpg</imagine>
   </intrebare>
   <intrebare id="2">
     <titlu>De ce mancati covrigi?</titlu>
-    <buton id="1">De pofta</buton>
-    <buton id="2">Erau la reducere</buton>
-    <buton id="3">De mere</buton>
-    <buton id="4">Nu mananc yo sarakiile astea</buton>
-    <id_raspuns>4</id_raspuns>
+    <buton id="A">De pofta</buton>
+    <buton id="B">Erau la reducere</buton>
+    <buton id="C">De mere</buton>
+    <id_raspuns>3</id_raspuns>
+    <imagine>none.jpg</imagine>
+  </intrebare>
+  <intrebare id="3">
+    <titlu>Va place tigaia dry cooker?</titlu>
+    <buton id="A">Da</buton>
+    <buton id="B">Nu</buton>
+    <buton id="C">Poate maine</buton>
+    <id_raspuns>3</id_raspuns>
     <imagine>none.jpg</imagine>
   </intrebare>
 </intrebari>
