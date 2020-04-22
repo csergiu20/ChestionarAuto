@@ -1,27 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <intrebari>
   <intrebare id="1">
-    <titlu>Cat aveti lungimea nasului?</titlu>
-    <buton id="A">10 cm</buton>
-    <buton id="B">20 cm</buton>
-    <buton id="C">30 cm</buton>
+    <titlu>unu</titlu>
+    <buton>a</buton>
+    <buton>b</buton>
+    <buton>b</buton>
     <id_raspuns>1</id_raspuns>
-    <imagine>nas.jpg</imagine>
+    <imagine>none.jpg</imagine>
   </intrebare>
   <intrebare id="2">
-    <titlu>De ce mancati covrigi?</titlu>
-    <buton id="A">De pofta</buton>
-    <buton id="B">Erau la reducere</buton>
-    <buton id="C">De mere</buton>
-    <id_raspuns>3</id_raspuns>
+    <titlu>doi</titlu>
+    <buton>a</buton>
+    <buton>b</buton>
+    <buton>b</buton>
+    <id_raspuns>1</id_raspuns>
     <imagine>none.jpg</imagine>
   </intrebare>
   <intrebare id="3">
-    <titlu>Va place tigaia dry cooker?</titlu>
-    <buton id="A">Da</buton>
-    <buton id="B">Nu</buton>
-    <buton id="C">Poate maine</buton>
-    <id_raspuns>3</id_raspuns>
+    <titlu>trei</titlu>
+    <buton>a</buton>
+    <buton>b</buton>
+    <buton>b</buton>
+    <id_raspuns>1</id_raspuns>
+    <imagine>none.jpg</imagine>
+  </intrebare>
+  <intrebare id="4">
+    <titlu>patru</titlu>
+    <buton>a</buton>
+    <buton>b</buton>
+    <buton>b</buton>
+    <id_raspuns>1</id_raspuns>
+    <imagine>none.jpg</imagine>
+  </intrebare>
+  <intrebare id="5">
+    <titlu>cinci</titlu>
+    <buton>a</buton>
+    <buton>b</buton>
+    <buton>b</buton>
+    <id_raspuns>1</id_raspuns>
+    <imagine>none.jpg</imagine>
+  </intrebare>
+  <intrebare id="6">
+    <titlu>sase</titlu>
+    <buton>a</buton>
+    <buton>b</buton>
+    <buton>b</buton>
+    <id_raspuns>1</id_raspuns>
     <imagine>none.jpg</imagine>
   </intrebare>
 </intrebari>
