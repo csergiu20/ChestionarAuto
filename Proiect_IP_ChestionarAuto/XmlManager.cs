@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace Proiect_IP_ChestionarAuto
@@ -50,7 +48,7 @@ namespace Proiect_IP_ChestionarAuto
                     var optionA = node.ChildNodes[1].InnerText;
                     var optionB = node.ChildNodes[2].InnerText;
                     var optionC = node.ChildNodes[3].InnerText;
-                    var image = ImagesPath + node.ChildNodes[4].InnerText;
+                    var image = ImagesPath + node.ChildNodes[4].InnerText.ToUpper();
                     var answer = node.ChildNodes[5].InnerText;
 
                     questions.Add(new Question(id, title, optionA, optionB, optionC, answer, image));

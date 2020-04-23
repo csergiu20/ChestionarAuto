@@ -43,7 +43,7 @@
             this.lblWrongAnswers = new System.Windows.Forms.Label();
             this.btnExitQForm = new System.Windows.Forms.Button();
             this.btnAnswer = new System.Windows.Forms.Button();
-            this.btnChangeAnswer = new System.Windows.Forms.Button();
+            this.btnResetAnswer = new System.Windows.Forms.Button();
             this.btnAnswerLater = new System.Windows.Forms.Button();
             this.lblIQ = new System.Windows.Forms.Label();
             this.lblRA = new System.Windows.Forms.Label();
@@ -189,26 +189,26 @@
             this.btnAnswer.UseVisualStyleBackColor = true;
             this.btnAnswer.Click += new System.EventHandler(this.btnAnswer_Click);
             // 
-            // btnChangeAnswer
+            // btnResetAnswer
             // 
-            this.btnChangeAnswer.Enabled = false;
-            this.btnChangeAnswer.Location = new System.Drawing.Point(272, 648);
-            this.btnChangeAnswer.Name = "btnChangeAnswer";
-            this.btnChangeAnswer.Size = new System.Drawing.Size(181, 65);
-            this.btnChangeAnswer.TabIndex = 16;
-            this.btnChangeAnswer.Text = "Modifica Raspunsul";
-            this.btnChangeAnswer.UseVisualStyleBackColor = true;
-            this.btnChangeAnswer.Click += new System.EventHandler(this.btnChangeAnswer_Click);
+            this.btnResetAnswer.Enabled = false;
+            this.btnResetAnswer.Location = new System.Drawing.Point(272, 648);
+            this.btnResetAnswer.Name = "btnResetAnswer";
+            this.btnResetAnswer.Size = new System.Drawing.Size(181, 65);
+            this.btnResetAnswer.TabIndex = 16;
+            this.btnResetAnswer.Text = "Modifica Raspunsul";
+            this.btnResetAnswer.UseVisualStyleBackColor = true;
+            this.btnResetAnswer.Click += new System.EventHandler(this.btnResetAnswer_Click);
             // 
             // btnAnswerLater
             // 
-            this.btnAnswerLater.Enabled = false;
             this.btnAnswerLater.Location = new System.Drawing.Point(79, 648);
             this.btnAnswerLater.Name = "btnAnswerLater";
             this.btnAnswerLater.Size = new System.Drawing.Size(181, 65);
             this.btnAnswerLater.TabIndex = 17;
             this.btnAnswerLater.Text = "Raspunde mai tarziu";
             this.btnAnswerLater.UseVisualStyleBackColor = true;
+            this.btnAnswerLater.Click += new System.EventHandler(this.btnAnswerLater_Click);
             // 
             // lblIQ
             // 
@@ -258,11 +258,11 @@
             // lblRemainingTime
             // 
             this.lblRemainingTime.AutoSize = true;
-            this.lblRemainingTime.Location = new System.Drawing.Point(633, 31);
+            this.lblRemainingTime.Location = new System.Drawing.Point(626, 31);
             this.lblRemainingTime.Name = "lblRemainingTime";
-            this.lblRemainingTime.Size = new System.Drawing.Size(44, 17);
+            this.lblRemainingTime.Size = new System.Drawing.Size(52, 17);
             this.lblRemainingTime.TabIndex = 23;
-            this.lblRemainingTime.Text = "30:00";
+            this.lblRemainingTime.Text = "30 : 00";
             // 
             // timerRemaining
             // 
@@ -280,7 +280,7 @@
             this.Controls.Add(this.lblRA);
             this.Controls.Add(this.lblIQ);
             this.Controls.Add(this.btnAnswerLater);
-            this.Controls.Add(this.btnChangeAnswer);
+            this.Controls.Add(this.btnResetAnswer);
             this.Controls.Add(this.btnAnswer);
             this.Controls.Add(this.btnExitQForm);
             this.Controls.Add(this.lblWrongAnswers);
@@ -319,7 +319,7 @@
         private System.Windows.Forms.Label lblWrongAnswers;
         private System.Windows.Forms.Button btnExitQForm;
         private System.Windows.Forms.Button btnAnswer;
-        private System.Windows.Forms.Button btnChangeAnswer;
+        private System.Windows.Forms.Button btnResetAnswer;
         private System.Windows.Forms.Button btnAnswerLater;
         private System.Windows.Forms.Label lblIQ;
         private System.Windows.Forms.Label lblRA;

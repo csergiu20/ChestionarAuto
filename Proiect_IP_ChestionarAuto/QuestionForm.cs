@@ -1,47 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml;
 
 namespace Proiect_IP_ChestionarAuto
 {
     public partial class QuestionForm : Form
     {
         private const int MaxQuestions = 3;
-        private int remainingQuestions = MaxQuestions;
-        private const string Category = "B";
-
-        private int counter = 1800;
+        private int _remainingQuestions = MaxQuestions;
+        private int _timerCounter = 1800;
+        private int _correctAnswers;
+        private int _wrongAnswers;
+        private int _percentage;
 
         private readonly List<Question> _questions;
-        private int _questionIndex = 0;
+        private List<char> _currentCorrectAnswers;
+        private int _questionIndex;
 
-        private List<int> _currentCorrectAnswer;
+        private int _pressedButtonTag;
 
-        private int buttonTag = 0;
-
-        private int _correctAnswers = 0;
-        private int _wrongAnswers = 0;
-        private int _percentage = 0;
-
-        public QuestionForm()
+        public QuestionForm(string category)
         {
             InitializeComponent();
 
             timerRemaining = new Timer();
-            timerRemaining.Tick += new EventHandler(timerRemaining_Tick);
-            timerRemaining.Interval = 1000; // 1 second
+            timerRemaining.Tick += timerRemaining_Tick;
+            timerRemaining.Interval = 1000;
             timerRemaining.Start();
 
             lblInitialQuestions.Text = MaxQuestions.ToString();
 
-            var xmlManager = new XmlManager(Category);
+            var xmlManager = new XmlManager(category);
             var totalQuestions = xmlManager.CountQuestions();
             var randomNumbers = RandomNumbers.Generate(totalQuestions, MaxQuestions);
             _questions = xmlManager.GetQuestions(randomNumbers);
@@ -53,9 +44,9 @@ namespace Proiect_IP_ChestionarAuto
         private void CheckAnswerEvent(object sender, EventArgs e)
         {
             var senderObject = (Button)sender;
-            buttonTag = Convert.ToInt32(senderObject.Tag);
+            _pressedButtonTag = Convert.ToInt32(senderObject.Tag);
 
-            switch (buttonTag)
+            switch (_pressedButtonTag)
             {
                 case 1:
                     btnA.Enabled = false;
@@ -68,7 +59,7 @@ namespace Proiect_IP_ChestionarAuto
                     break;
             }
 
-            btnChangeAnswer.Enabled = true;
+            btnResetAnswer.Enabled = true;
             btnAnswer.Enabled = true;
         }
 
@@ -81,22 +72,12 @@ namespace Proiect_IP_ChestionarAuto
             picBoxQImage.Image = Image.FromFile(_questions[_questionIndex].Image);
             picBoxQImage.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            var answerList = new System.Collections.Generic.List<int>();
+            _currentCorrectAnswers = new List<char>();
 
-            var temp = _questions[_questionIndex].Answer.Split(',');
-
-            foreach (var num in temp)
+            foreach (var c in _questions[_questionIndex].Answer)
             {
-                answerList.Add(int.Parse(num));
+                _currentCorrectAnswers.Add(c);
             }
-
-            foreach (var answer in answerList)
-            {
-                Console.WriteLine(answer);
-            }
-
-            _currentCorrectAnswer = new List<int>();
-            _currentCorrectAnswer = answerList;
         }
 
         private void LoadStatistics()
@@ -105,8 +86,113 @@ namespace Proiect_IP_ChestionarAuto
             lblWrongAnswers.Text = _wrongAnswers.ToString();
             _percentage = (int)Math.Round((double)(_correctAnswers * 100) / MaxQuestions);
 
-            lblRemainingQuestions.Text = (remainingQuestions--).ToString();
+            lblRemainingQuestions.Text = (_remainingQuestions--).ToString();
+        }
 
+        private void EndQuestionnaire()
+        {
+            Hide();
+            var message = _percentage + "% Corecte!";
+            const string title = "Scor";
+            MessageBox.Show(message, title);
+            Close();
+        }
+
+        private void btnAnswerLater_Click(object sender, EventArgs e)
+        {
+            var temp = _questions[_questionIndex];
+            _questions.Remove(_questions[_questionIndex]);
+            _questions.Add(temp);
+
+            btnResetAnswer_Click(sender, e);
+            LoadQuestions();
+        }
+
+        private void btnResetAnswer_Click(object sender, EventArgs e)
+        {
+            btnA.Enabled = true;
+            btnB.Enabled = true;
+            btnC.Enabled = true;
+
+            btnResetAnswer.Enabled = false;
+            btnAnswer.Enabled = false;
+        }
+
+        private void btnAnswer_Click(object sender, EventArgs e)
+        {
+
+            if (btnA.Enabled == false && _currentCorrectAnswers.Contains('A')
+                                            && btnB.Enabled == false && _currentCorrectAnswers.Contains('B')
+                                            && btnC.Enabled == false && _currentCorrectAnswers.Contains('C')
+                                            && _currentCorrectAnswers.Count() == 3)
+            {
+                _correctAnswers++;
+            }
+            else if (btnA.Enabled == false && _currentCorrectAnswers.Contains('A')
+                                            && btnB.Enabled == false && _currentCorrectAnswers.Contains('B')
+                                            && btnC.Enabled
+                                            && _currentCorrectAnswers.Count() == 2)
+            {
+                _correctAnswers++;
+            }
+            else if (btnA.Enabled == false && _currentCorrectAnswers.Contains('A')
+                                           && btnC.Enabled == false && _currentCorrectAnswers.Contains('C')
+                                           && btnB.Enabled
+                                           && _currentCorrectAnswers.Count() == 2)
+            {
+                _correctAnswers++;
+            }
+            else if (btnB.Enabled == false && _currentCorrectAnswers.Contains('B')
+                                           && btnC.Enabled == false && _currentCorrectAnswers.Contains('C')
+                                           && btnA.Enabled
+                                           && _currentCorrectAnswers.Count() == 2)
+            {
+                _correctAnswers++;
+            }
+            else if (btnA.Enabled == false && _currentCorrectAnswers.Contains('A')
+                                           && btnC.Enabled
+                                           && btnB.Enabled
+                                           && _currentCorrectAnswers.Count() == 1)
+            {
+                _correctAnswers++;
+            }
+            else if (btnB.Enabled == false && _currentCorrectAnswers.Contains('B')
+                                           && btnC.Enabled
+                                           && btnA.Enabled
+                                           && _currentCorrectAnswers.Count() == 1)
+            {
+                _correctAnswers++;
+            }
+            else if (btnC.Enabled == false && _currentCorrectAnswers.Contains('C')
+                                           && btnB.Enabled
+                                           && btnA.Enabled
+                                           && _currentCorrectAnswers.Count() == 1)
+            {
+                _correctAnswers++;
+            }
+            else
+            {
+                _wrongAnswers++;
+            }
+
+            _questionIndex++;
+
+            LoadStatistics();
+
+            if (_questionIndex < MaxQuestions)
+            {
+                LoadQuestions();
+                btnResetAnswer_Click(sender, e);
+
+                if (_questionIndex == MaxQuestions - 1)
+                {
+                    btnAnswerLater.Enabled = false;
+                }
+            }
+            else
+            {
+                EndQuestionnaire();
+            }
         }
 
         private void btnExitQForm_Click(object sender, EventArgs e)
@@ -114,124 +200,19 @@ namespace Proiect_IP_ChestionarAuto
             Close();
         }
 
-        private void btnAnswer_Click(object sender, EventArgs e)
-        {
-
-            if (btnA.Enabled == false && _currentCorrectAnswer.Contains(1)
-                                            && btnB.Enabled == false && _currentCorrectAnswer.Contains(2)
-                                            && btnC.Enabled == false && _currentCorrectAnswer.Contains(3)
-                                            && _currentCorrectAnswer.Count() == 3)
-            {
-                _correctAnswers++;
-            }
-
-            else if (btnA.Enabled == false && _currentCorrectAnswer.Contains(1)
-                                            && btnB.Enabled == false && _currentCorrectAnswer.Contains(2)
-                                            && btnC.Enabled
-                                            && _currentCorrectAnswer.Count() == 2)
-            {
-                _correctAnswers++;
-            }
-
-            else if (btnA.Enabled == false && _currentCorrectAnswer.Contains(1)
-                                           && btnC.Enabled == false && _currentCorrectAnswer.Contains(3)
-                                           && btnB.Enabled
-                                           && _currentCorrectAnswer.Count() == 2)
-            {
-                _correctAnswers++;
-            }
-
-            else if (btnB.Enabled == false && _currentCorrectAnswer.Contains(2)
-                                           && btnC.Enabled == false && _currentCorrectAnswer.Contains(3)
-                                           && btnA.Enabled
-                                           && _currentCorrectAnswer.Count() == 2)
-            {
-                _correctAnswers++;
-            }
-
-            else if (btnA.Enabled == false && _currentCorrectAnswer.Contains(1)
-                                           && btnC.Enabled
-                                           && btnB.Enabled
-                                           && _currentCorrectAnswer.Count() == 1)
-            {
-                _correctAnswers++;
-            }
-
-            else if (btnB.Enabled == false && _currentCorrectAnswer.Contains(2)
-                                           && btnC.Enabled
-                                           && btnA.Enabled
-                                           && _currentCorrectAnswer.Count() == 1)
-            {
-                _correctAnswers++;
-            }
-
-            else if (btnC.Enabled == false && _currentCorrectAnswer.Contains(3)
-                                           && btnB.Enabled
-                                           && btnA.Enabled
-                                           && _currentCorrectAnswer.Count() == 1)
-            {
-                _correctAnswers++;
-            }
-
-            else
-            {
-                _wrongAnswers++;
-            }
-
-            LoadStatistics();
-
-            _questionIndex++;
-
-            if (_questionIndex < MaxQuestions)
-            {
-                LoadQuestions();
-
-                btnA.Enabled = true;
-                btnB.Enabled = true;
-                btnC.Enabled = true;
-
-                btnChangeAnswer.Enabled = false;
-                btnAnswer.Enabled = false;
-            }
-            else
-            {
-                Hide();
-                var message = _percentage.ToString() + "% Corecte!";
-                const string title = "Scor";
-                MessageBox.Show(message, title);
-                Close();
-            }
-        }
-
-        private void btnChangeAnswer_Click(object sender, EventArgs e)
-        {
-            btnA.Enabled = true;
-            btnB.Enabled = true;
-            btnC.Enabled = true;
-
-            btnChangeAnswer.Enabled = false;
-            btnAnswer.Enabled = false;
-        }
-
         private void timerRemaining_Tick(object sender, EventArgs e)
         {
-            if (counter == 0)
+            if (_timerCounter == 0)
             {
                 timerRemaining.Stop();
-                lblRemainingTime.Text = counter.ToString();
-
-                Hide();
-                var message = _percentage.ToString() + "% Corecte!";
-                const string title = "Scor";
-                MessageBox.Show(message, title);
-                Close();
+                EndQuestionnaire();
             }
             else
             {
-                counter--;
-                int minutes = counter / 60;
-                int seconds = counter - (minutes * 60);
-                lblRemainingTime.Text=minutes.ToString() + ":" + seconds.ToString();
+                _timerCounter--;
+                var minutes = _timerCounter / 60;
+                var seconds = _timerCounter - (minutes * 60);
+                lblRemainingTime.Text = minutes + " : " + seconds;
             }
         }
     }

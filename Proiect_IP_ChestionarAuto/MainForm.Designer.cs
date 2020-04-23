@@ -1,11 +1,14 @@
-﻿namespace Proiect_IP_ChestionarAuto
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Proiect_IP_ChestionarAuto
 {
     partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -168,16 +171,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.Button btnAbout;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox textBoxPassword;
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.GroupBox groupBoxAdmin;
-        private System.Windows.Forms.GroupBox groupBoxCategory;
-        private System.Windows.Forms.RadioButton rbCatC;
-        private System.Windows.Forms.RadioButton rbCatB;
+        private Button btnStart;
+        private Button btnAbout;
+        private Button btnExit;
+        private Label lblPassword;
+        private TextBox textBoxPassword;
+        private Button btnLogin;
+        private GroupBox groupBoxAdmin;
+        private GroupBox groupBoxCategory;
+        public RadioButton rbCatC;
+        public RadioButton rbCatB;
     }
 }
 

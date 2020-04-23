@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Proiect_IP_ChestionarAuto
@@ -35,21 +28,18 @@ namespace Proiect_IP_ChestionarAuto
         private void btnStart_Click(object sender, EventArgs e)
         {
             Hide();
-            var questionForm = new QuestionForm();
+
+            var category = rbCatB.Checked ? "B" : "C";
+
+            var questionForm = new QuestionForm(category);
             questionForm.ShowDialog();
+
             Show();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (textBoxPassword.Text == AdminPassword)
-            {
-                MessageBox.Show("Login Succesful!", "Login");
-            }
-            else
-            {
-                MessageBox.Show("Login error!", "Login");
-            }
+            MessageBox.Show(textBoxPassword.Text == AdminPassword ? "Login Succesful!" : "Login error!", "Login");
         }
     }
 }
