@@ -7,8 +7,8 @@ namespace Proiect_IP_ChestionarAuto
 {
     internal class XmlManager
     {
-        private const string ImagesPath = "$(SolutionDir)\\..\\..\\..\\resources\\images\\";
-        private const string QuestionsPath = "$(SolutionDir)\\..\\..\\..\\resources\\questions\\";
+        private const string ImagesPath = "resources\\images\\";
+        private const string QuestionsPath = "resources\\questions\\";
         private readonly string _category;
 
         public XmlManager(string category)
