@@ -9,11 +9,11 @@ namespace Proiect_IP_ChestionarAuto
     public partial class QuestionForm : Form
     {
         private const int MaxQuestions = 3;
+        private const int MaxWrongAnswers = 5;
         private int _remainingQuestions = MaxQuestions;
         private int _timerCounter = 1800;
         private int _correctAnswers;
         private int _wrongAnswers;
-        private int _percentage;
 
         private readonly List<Question> _questions;
         private List<char> _currentCorrectAnswers;
@@ -84,7 +84,6 @@ namespace Proiect_IP_ChestionarAuto
         {
             lblCorrectAnswers.Text = _correctAnswers.ToString();
             lblWrongAnswers.Text = _wrongAnswers.ToString();
-            _percentage = (int)Math.Round((double)(_correctAnswers * 100) / MaxQuestions);
 
             lblRemainingQuestions.Text = (_remainingQuestions--).ToString();
         }
@@ -92,8 +91,11 @@ namespace Proiect_IP_ChestionarAuto
         private void EndQuestionnaire()
         {
             Hide();
-            var message = _percentage + "% Corecte!";
-            const string title = "Scor";
+
+            var message = _wrongAnswers == MaxWrongAnswers ? "Ati fost respins!\n" : "Felicitari, ati promovat!\n";
+            message += "Ai ales " + _correctAnswers + " raspunsuri corecte din " + MaxQuestions + " posibile.";
+            const string title = "Verdict";
+
             MessageBox.Show(message, title);
             Close();
         }
@@ -178,6 +180,11 @@ namespace Proiect_IP_ChestionarAuto
             _questionIndex++;
 
             LoadStatistics();
+
+            if (_wrongAnswers == MaxWrongAnswers)
+            {
+                EndQuestionnaire();
+            }
 
             if (_questionIndex < MaxQuestions)
             {
