@@ -178,24 +178,29 @@
             // 
             // btnAnswer
             // 
+            this.btnAnswer.Enabled = false;
             this.btnAnswer.Location = new System.Drawing.Point(465, 648);
             this.btnAnswer.Name = "btnAnswer";
             this.btnAnswer.Size = new System.Drawing.Size(181, 65);
             this.btnAnswer.TabIndex = 15;
             this.btnAnswer.Text = "Trimite raspunsul";
             this.btnAnswer.UseVisualStyleBackColor = true;
+            this.btnAnswer.Click += new System.EventHandler(this.btnAnswer_Click);
             // 
             // btnChangeAnswer
             // 
+            this.btnChangeAnswer.Enabled = false;
             this.btnChangeAnswer.Location = new System.Drawing.Point(272, 648);
             this.btnChangeAnswer.Name = "btnChangeAnswer";
             this.btnChangeAnswer.Size = new System.Drawing.Size(181, 65);
             this.btnChangeAnswer.TabIndex = 16;
             this.btnChangeAnswer.Text = "Modifica Raspunsul";
             this.btnChangeAnswer.UseVisualStyleBackColor = true;
+            this.btnChangeAnswer.Click += new System.EventHandler(this.btnChangeAnswer_Click);
             // 
             // btnAnswerLater
             // 
+            this.btnAnswerLater.Enabled = false;
             this.btnAnswerLater.Location = new System.Drawing.Point(79, 648);
             this.btnAnswerLater.Name = "btnAnswerLater";
             this.btnAnswerLater.Size = new System.Drawing.Size(181, 65);

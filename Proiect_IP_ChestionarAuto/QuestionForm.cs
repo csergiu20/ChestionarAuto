@@ -21,6 +21,8 @@ namespace Proiect_IP_ChestionarAuto
 
         private int _currentCorrectAnswer = 0;
 
+        private int buttonTag = 0;
+
         private int _correctAnswers = 0;
         private int _wrongAnswers = 0;
         private int _percentage = 0;
@@ -41,33 +43,29 @@ namespace Proiect_IP_ChestionarAuto
         private void CheckAnswerEvent(object sender, EventArgs e)
         {
             var senderObject = (Button)sender;
-            var buttonTag = Convert.ToInt32(senderObject.Tag);
+            buttonTag = Convert.ToInt32(senderObject.Tag);
 
-            if (buttonTag == _currentCorrectAnswer)
+            switch (buttonTag)
             {
-                _correctAnswers++;
-            }
-            else
-            {
-                _wrongAnswers++;
+                case 1:
+                    btnA.Enabled = false;
+                    btnB.Enabled = true;
+                    btnC.Enabled = true;
+                    break;
+                case 2:
+                    btnA.Enabled = true;
+                    btnB.Enabled = false;
+                    btnC.Enabled = true;
+                    break;
+                case 3:
+                    btnA.Enabled = true;
+                    btnB.Enabled = true;
+                    btnC.Enabled = false;
+                    break;
             }
 
-            LoadStatistics();
-
-            _questionIndex++;
-
-            if (_questionIndex < MaxQuestions)
-            {
-                LoadQuestions();
-            }
-            else
-            {
-                Hide();
-                var message = _percentage.ToString() + "% Corecte!";
-                const string title = "Scor";
-                MessageBox.Show(message, title);
-                Close();
-            }
+            btnChangeAnswer.Enabled = true;
+            btnAnswer.Enabled = true;
         }
 
         private void LoadQuestions()
@@ -97,6 +95,52 @@ namespace Proiect_IP_ChestionarAuto
         private void btnExitQForm_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnAnswer_Click(object sender, EventArgs e)
+        {
+            if (buttonTag == _currentCorrectAnswer)
+            {
+                _correctAnswers++;
+            }
+            else
+            {
+                _wrongAnswers++;
+            }
+
+            LoadStatistics();
+
+            _questionIndex++;
+
+            if (_questionIndex < MaxQuestions)
+            {
+                LoadQuestions();
+
+                btnA.Enabled = true;
+                btnB.Enabled = true;
+                btnC.Enabled = true;
+
+                btnChangeAnswer.Enabled = false;
+                btnAnswer.Enabled = false;
+            }
+            else
+            {
+                Hide();
+                var message = _percentage.ToString() + "% Corecte!";
+                const string title = "Scor";
+                MessageBox.Show(message, title);
+                Close();
+            }
+        }
+
+        private void btnChangeAnswer_Click(object sender, EventArgs e)
+        {
+            btnA.Enabled = true;
+            btnB.Enabled = true;
+            btnC.Enabled = true;
+
+            btnChangeAnswer.Enabled = false;
+            btnAnswer.Enabled = false;
         }
     }
 }
