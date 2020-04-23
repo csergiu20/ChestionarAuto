@@ -76,6 +76,7 @@ namespace Proiect_IP_ChestionarAuto
             btnB.Text = _questions[_questionIndex].OptionB;
             btnC.Text = _questions[_questionIndex].OptionC;
             picBoxQImage.Image = Image.FromFile(_questions[_questionIndex].Image);
+            picBoxQImage.SizeMode = PictureBoxSizeMode.StretchImage;
             _currentCorrectAnswer = _questions[_questionIndex].Answer;
         }
 
@@ -84,6 +85,11 @@ namespace Proiect_IP_ChestionarAuto
             lblCorrectAnswers.Text = _correctAnswers.ToString();
             lblWrongAnswers.Text = _wrongAnswers.ToString();
             _percentage = (int)Math.Round((double)(_correctAnswers * 100) / MaxQuestions);
+        }
+
+        private void btnExitQForm_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
