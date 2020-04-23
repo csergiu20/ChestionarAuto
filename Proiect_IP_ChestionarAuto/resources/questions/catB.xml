@@ -5,7 +5,7 @@
     <option>a 1</option>
     <option>b 1</option>
     <option>c 1</option>
-    <image>none.jpg</image>
+    <image>0.jpg</image>
     <answer>AB</answer>
   </question>
   <question id="2">
@@ -13,7 +13,7 @@
     <option>a 2</option>
     <option>b 2</option>
     <option>c 2</option>
-    <image>none.jpg</image>
+    <image>0.jpg</image>
     <answer>ABC</answer>
   </question>
   <question id="3">
@@ -21,7 +21,7 @@
     <option>a 3</option>
     <option>b 3</option>
     <option>c 3</option>
-    <image>none.jpg</image>
+    <image>0.jpg</image>
     <answer>B</answer>
   </question>
   <question id="4">
@@ -29,7 +29,7 @@
     <option>a 4</option>
     <option>b 4</option>
     <option>c 4</option>
-    <image>none.jpg</image>
+    <image>0.jpg</image>
     <answer>AC</answer>
   </question>
   <question id="5">
@@ -37,7 +37,7 @@
     <option>a 5</option>
     <option>b 5</option>
     <option>c 5</option>
-    <image>none.jpg</image>
+    <image>0.jpg</image>
     <answer>C</answer>
   </question>
   <question id="6">
@@ -45,7 +45,7 @@
     <option>a 6</option>
     <option>b 6</option>
     <option>c 6</option>
-    <image>none.jpg</image>
+    <image>0.jpg</image>
     <answer>ABC</answer>
   </question>
 </questions>

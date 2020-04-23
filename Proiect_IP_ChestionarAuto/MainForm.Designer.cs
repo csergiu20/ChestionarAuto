@@ -39,17 +39,18 @@ namespace Proiect_IP_ChestionarAuto
             this.btnLogin = new System.Windows.Forms.Button();
             this.groupBoxAdmin = new System.Windows.Forms.GroupBox();
             this.groupBoxCategory = new System.Windows.Forms.GroupBox();
-            this.rbCatB = new System.Windows.Forms.RadioButton();
             this.rbCatC = new System.Windows.Forms.RadioButton();
+            this.rbCatB = new System.Windows.Forms.RadioButton();
+            this.lblFormTitle = new System.Windows.Forms.Label();
             this.groupBoxAdmin.SuspendLayout();
             this.groupBoxCategory.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(70, 373);
+            this.btnStart.Location = new System.Drawing.Point(114, 396);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(230, 112);
+            this.btnStart.Size = new System.Drawing.Size(230, 63);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Incepe";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -57,9 +58,9 @@ namespace Proiect_IP_ChestionarAuto
             // 
             // btnAbout
             // 
-            this.btnAbout.Location = new System.Drawing.Point(70, 514);
+            this.btnAbout.Location = new System.Drawing.Point(114, 487);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(230, 110);
+            this.btnAbout.Size = new System.Drawing.Size(230, 63);
             this.btnAbout.TabIndex = 1;
             this.btnAbout.Text = "Despre";
             this.btnAbout.UseVisualStyleBackColor = true;
@@ -67,9 +68,9 @@ namespace Proiect_IP_ChestionarAuto
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(949, 514);
+            this.btnExit.Location = new System.Drawing.Point(114, 578);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(230, 110);
+            this.btnExit.Size = new System.Drawing.Size(230, 63);
             this.btnExit.TabIndex = 2;
             this.btnExit.Text = "Iesire";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -81,25 +82,25 @@ namespace Proiect_IP_ChestionarAuto
             this.lblPassword.Location = new System.Drawing.Point(6, 30);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Padding = new System.Windows.Forms.Padding(10);
-            this.lblPassword.Size = new System.Drawing.Size(93, 37);
+            this.lblPassword.Size = new System.Drawing.Size(73, 37);
             this.lblPassword.TabIndex = 1;
-            this.lblPassword.Text = "Password:";
+            this.lblPassword.Text = "Parola:";
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(105, 39);
+            this.textBoxPassword.Location = new System.Drawing.Point(85, 39);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(101, 22);
+            this.textBoxPassword.Size = new System.Drawing.Size(121, 22);
             this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(105, 100);
+            this.btnLogin.Location = new System.Drawing.Point(85, 100);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(101, 40);
+            this.btnLogin.Size = new System.Drawing.Size(121, 40);
             this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "Login";
+            this.btnLogin.Text = "Logheaza-te";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -108,23 +109,34 @@ namespace Proiect_IP_ChestionarAuto
             this.groupBoxAdmin.Controls.Add(this.lblPassword);
             this.groupBoxAdmin.Controls.Add(this.btnLogin);
             this.groupBoxAdmin.Controls.Add(this.textBoxPassword);
-            this.groupBoxAdmin.Location = new System.Drawing.Point(70, 59);
+            this.groupBoxAdmin.Location = new System.Drawing.Point(114, 206);
             this.groupBoxAdmin.Name = "groupBoxAdmin";
             this.groupBoxAdmin.Size = new System.Drawing.Size(230, 164);
             this.groupBoxAdmin.TabIndex = 4;
             this.groupBoxAdmin.TabStop = false;
-            this.groupBoxAdmin.Text = "Admin Zone";
+            this.groupBoxAdmin.Text = "Zona administrator";
             // 
             // groupBoxCategory
             // 
             this.groupBoxCategory.Controls.Add(this.rbCatC);
             this.groupBoxCategory.Controls.Add(this.rbCatB);
-            this.groupBoxCategory.Location = new System.Drawing.Point(70, 250);
+            this.groupBoxCategory.Location = new System.Drawing.Point(114, 86);
             this.groupBoxCategory.Name = "groupBoxCategory";
-            this.groupBoxCategory.Size = new System.Drawing.Size(237, 93);
+            this.groupBoxCategory.Size = new System.Drawing.Size(230, 93);
             this.groupBoxCategory.TabIndex = 5;
             this.groupBoxCategory.TabStop = false;
             this.groupBoxCategory.Text = "Categorie";
+            // 
+            // rbCatC
+            // 
+            this.rbCatC.AutoSize = true;
+            this.rbCatC.Enabled = false;
+            this.rbCatC.Location = new System.Drawing.Point(7, 55);
+            this.rbCatC.Name = "rbCatC";
+            this.rbCatC.Size = new System.Drawing.Size(103, 21);
+            this.rbCatC.TabIndex = 1;
+            this.rbCatC.Text = "Categoria C";
+            this.rbCatC.UseVisualStyleBackColor = true;
             // 
             // rbCatB
             // 
@@ -138,22 +150,22 @@ namespace Proiect_IP_ChestionarAuto
             this.rbCatB.Text = "Categoria B";
             this.rbCatB.UseVisualStyleBackColor = true;
             // 
-            // rbCatC
+            // lblFormTitle
             // 
-            this.rbCatC.AutoSize = true;
-            this.rbCatC.Enabled = false;
-            this.rbCatC.Location = new System.Drawing.Point(7, 55);
-            this.rbCatC.Name = "rbCatC";
-            this.rbCatC.Size = new System.Drawing.Size(103, 21);
-            this.rbCatC.TabIndex = 1;
-            this.rbCatC.Text = "Categoria C";
-            this.rbCatC.UseVisualStyleBackColor = true;
+            this.lblFormTitle.AutoSize = true;
+            this.lblFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormTitle.Location = new System.Drawing.Point(110, 30);
+            this.lblFormTitle.Name = "lblFormTitle";
+            this.lblFormTitle.Size = new System.Drawing.Size(234, 32);
+            this.lblFormTitle.TabIndex = 6;
+            this.lblFormTitle.Text = "Chestionar Auto";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.ClientSize = new System.Drawing.Size(462, 673);
+            this.Controls.Add(this.lblFormTitle);
             this.Controls.Add(this.groupBoxCategory);
             this.Controls.Add(this.groupBoxAdmin);
             this.Controls.Add(this.btnExit);
@@ -166,6 +178,7 @@ namespace Proiect_IP_ChestionarAuto
             this.groupBoxCategory.ResumeLayout(false);
             this.groupBoxCategory.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -181,6 +194,7 @@ namespace Proiect_IP_ChestionarAuto
         private GroupBox groupBoxCategory;
         public RadioButton rbCatC;
         public RadioButton rbCatB;
+        private Label lblFormTitle;
     }
 }
 

@@ -92,7 +92,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="resources\images\none.jpg" />
+    <Content Include="resources\images\0.jpg" />
     <Content Include="resources\questions\catB.xml" />
   </ItemGroup>
   <ItemGroup />

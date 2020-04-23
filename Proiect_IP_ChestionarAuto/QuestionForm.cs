@@ -93,8 +93,8 @@ namespace Proiect_IP_ChestionarAuto
             Hide();
 
             var message = _wrongAnswers == MaxWrongAnswers ? "Ati fost respins!\n" : "Felicitari, ati promovat!\n";
-            message += "Ai ales " + _correctAnswers + " raspunsuri corecte din " + MaxQuestions + " posibile.";
-            const string title = "Verdict";
+            message += "Ati raspuns corect la " + _correctAnswers + " din cele " + MaxQuestions + " intrebari.";
+            const string title = "Rezultat";
 
             MessageBox.Show(message, title);
             Close();

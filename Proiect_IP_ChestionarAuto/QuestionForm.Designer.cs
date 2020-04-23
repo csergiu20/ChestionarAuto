@@ -57,15 +57,15 @@
             // 
             // picBoxQImage
             // 
-            this.picBoxQImage.Location = new System.Drawing.Point(704, 215);
+            this.picBoxQImage.Location = new System.Drawing.Point(692, 223);
             this.picBoxQImage.Name = "picBoxQImage";
-            this.picBoxQImage.Size = new System.Drawing.Size(500, 400);
+            this.picBoxQImage.Size = new System.Drawing.Size(512, 384);
             this.picBoxQImage.TabIndex = 0;
             this.picBoxQImage.TabStop = false;
             // 
             // lblQTitle
             // 
-            this.lblQTitle.Location = new System.Drawing.Point(79, 97);
+            this.lblQTitle.Location = new System.Drawing.Point(79, 102);
             this.lblQTitle.Name = "lblQTitle";
             this.lblQTitle.Size = new System.Drawing.Size(1125, 94);
             this.lblQTitle.TabIndex = 1;
@@ -74,9 +74,9 @@
             // 
             // btnA
             // 
-            this.btnA.Location = new System.Drawing.Point(79, 215);
+            this.btnA.Location = new System.Drawing.Point(79, 223);
             this.btnA.Name = "btnA";
-            this.btnA.Size = new System.Drawing.Size(567, 125);
+            this.btnA.Size = new System.Drawing.Size(567, 114);
             this.btnA.TabIndex = 2;
             this.btnA.Tag = "1";
             this.btnA.Text = "button1";
@@ -85,9 +85,9 @@
             // 
             // btnB
             // 
-            this.btnB.Location = new System.Drawing.Point(79, 353);
+            this.btnB.Location = new System.Drawing.Point(82, 358);
             this.btnB.Name = "btnB";
-            this.btnB.Size = new System.Drawing.Size(567, 125);
+            this.btnB.Size = new System.Drawing.Size(567, 114);
             this.btnB.TabIndex = 3;
             this.btnB.Tag = "2";
             this.btnB.Text = "button2";
@@ -96,9 +96,9 @@
             // 
             // btnC
             // 
-            this.btnC.Location = new System.Drawing.Point(79, 492);
+            this.btnC.Location = new System.Drawing.Point(82, 493);
             this.btnC.Name = "btnC";
-            this.btnC.Size = new System.Drawing.Size(567, 123);
+            this.btnC.Size = new System.Drawing.Size(567, 114);
             this.btnC.TabIndex = 4;
             this.btnC.Tag = "3";
             this.btnC.Text = "button3";
@@ -108,7 +108,7 @@
             // lblA
             // 
             this.lblA.AutoSize = true;
-            this.lblA.Location = new System.Drawing.Point(34, 269);
+            this.lblA.Location = new System.Drawing.Point(34, 272);
             this.lblA.Name = "lblA";
             this.lblA.Size = new System.Drawing.Size(17, 17);
             this.lblA.TabIndex = 7;
@@ -117,7 +117,7 @@
             // lblB
             // 
             this.lblB.AutoSize = true;
-            this.lblB.Location = new System.Drawing.Point(34, 407);
+            this.lblB.Location = new System.Drawing.Point(34, 406);
             this.lblB.Name = "lblB";
             this.lblB.Size = new System.Drawing.Size(17, 17);
             this.lblB.TabIndex = 8;
@@ -126,7 +126,7 @@
             // lblC
             // 
             this.lblC.AutoSize = true;
-            this.lblC.Location = new System.Drawing.Point(34, 545);
+            this.lblC.Location = new System.Drawing.Point(34, 542);
             this.lblC.Name = "lblC";
             this.lblC.Size = new System.Drawing.Size(17, 17);
             this.lblC.TabIndex = 9;
@@ -137,9 +137,9 @@
             this.lblCA.AutoSize = true;
             this.lblCA.Location = new System.Drawing.Point(837, 61);
             this.lblCA.Name = "lblCA";
-            this.lblCA.Size = new System.Drawing.Size(133, 17);
+            this.lblCA.Size = new System.Drawing.Size(131, 17);
             this.lblCA.TabIndex = 10;
-            this.lblCA.Text = "Raspunsuri Corecte";
+            this.lblCA.Text = "Raspunsuri corecte";
             // 
             // lblCorrectAnswers
             // 
@@ -155,9 +155,9 @@
             this.lblWA.AutoSize = true;
             this.lblWA.Location = new System.Drawing.Point(1050, 61);
             this.lblWA.Name = "lblWA";
-            this.lblWA.Size = new System.Drawing.Size(130, 17);
+            this.lblWA.Size = new System.Drawing.Size(127, 17);
             this.lblWA.TabIndex = 12;
-            this.lblWA.Text = "Raspunsuri Gresite";
+            this.lblWA.Text = "Raspunsuri gresite";
             // 
             // lblWrongAnswers
             // 
@@ -170,9 +170,9 @@
             // 
             // btnExitQForm
             // 
-            this.btnExitQForm.Location = new System.Drawing.Point(1053, 648);
+            this.btnExitQForm.Location = new System.Drawing.Point(1023, 648);
             this.btnExitQForm.Name = "btnExitQForm";
-            this.btnExitQForm.Size = new System.Drawing.Size(151, 65);
+            this.btnExitQForm.Size = new System.Drawing.Size(181, 65);
             this.btnExitQForm.TabIndex = 14;
             this.btnExitQForm.Text = "Iesire";
             this.btnExitQForm.UseVisualStyleBackColor = true;
@@ -217,21 +217,21 @@
             this.lblIQ.Name = "lblIQ";
             this.lblIQ.Size = new System.Drawing.Size(104, 17);
             this.lblIQ.TabIndex = 18;
-            this.lblIQ.Text = "Intrebari Initiale";
+            this.lblIQ.Text = "Intrebari initiale";
             // 
             // lblRA
             // 
             this.lblRA.AutoSize = true;
             this.lblRA.Location = new System.Drawing.Point(282, 61);
             this.lblRA.Name = "lblRA";
-            this.lblRA.Size = new System.Drawing.Size(116, 17);
+            this.lblRA.Size = new System.Drawing.Size(111, 17);
             this.lblRA.TabIndex = 19;
-            this.lblRA.Text = "Intrebari Ramase";
+            this.lblRA.Text = "Intrebari ramase";
             // 
             // lblInitialQuestions
             // 
             this.lblInitialQuestions.AutoSize = true;
-            this.lblInitialQuestions.Location = new System.Drawing.Point(129, 31);
+            this.lblInitialQuestions.Location = new System.Drawing.Point(123, 31);
             this.lblInitialQuestions.Name = "lblInitialQuestions";
             this.lblInitialQuestions.Size = new System.Drawing.Size(16, 17);
             this.lblInitialQuestions.TabIndex = 20;
@@ -251,9 +251,9 @@
             this.lblRT.AutoSize = true;
             this.lblRT.Location = new System.Drawing.Point(612, 61);
             this.lblRT.Name = "lblRT";
-            this.lblRT.Size = new System.Drawing.Size(87, 17);
+            this.lblRT.Size = new System.Drawing.Size(82, 17);
             this.lblRT.TabIndex = 22;
-            this.lblRT.Text = "Timp Ramas";
+            this.lblRT.Text = "Timp ramas";
             // 
             // lblRemainingTime
             // 
@@ -272,7 +272,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 748);
+            this.ClientSize = new System.Drawing.Size(1262, 753);
             this.Controls.Add(this.lblRemainingTime);
             this.Controls.Add(this.lblRT);
             this.Controls.Add(this.lblRemainingQuestions);
