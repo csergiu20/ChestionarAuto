@@ -51,7 +51,7 @@ namespace Proiect_IP_ChestionarAuto
                     var optionB = node.ChildNodes[2].InnerText;
                     var optionC = node.ChildNodes[3].InnerText;
                     var image = ImagesPath + node.ChildNodes[4].InnerText;
-                    var answer = int.Parse(node.ChildNodes[5].InnerText);
+                    var answer = node.ChildNodes[5].InnerText;
 
                     questions.Add(new Question(id, title, optionA, optionB, optionC, answer, image));
                 }

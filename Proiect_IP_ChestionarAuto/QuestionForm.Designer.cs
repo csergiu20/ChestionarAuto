@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.picBoxQImage = new System.Windows.Forms.PictureBox();
             this.lblQTitle = new System.Windows.Forms.Label();
             this.btnA = new System.Windows.Forms.Button();
@@ -50,6 +51,7 @@
             this.lblRemainingQuestions = new System.Windows.Forms.Label();
             this.lblRT = new System.Windows.Forms.Label();
             this.lblRemainingTime = new System.Windows.Forms.Label();
+            this.timerRemaining = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxQImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -256,11 +258,15 @@
             // lblRemainingTime
             // 
             this.lblRemainingTime.AutoSize = true;
-            this.lblRemainingTime.Location = new System.Drawing.Point(644, 31);
+            this.lblRemainingTime.Location = new System.Drawing.Point(633, 31);
             this.lblRemainingTime.Name = "lblRemainingTime";
-            this.lblRemainingTime.Size = new System.Drawing.Size(16, 17);
+            this.lblRemainingTime.Size = new System.Drawing.Size(44, 17);
             this.lblRemainingTime.TabIndex = 23;
-            this.lblRemainingTime.Text = "0";
+            this.lblRemainingTime.Text = "30:00";
+            // 
+            // timerRemaining
+            // 
+            this.timerRemaining.Tick += new System.EventHandler(this.timerRemaining_Tick);
             // 
             // QuestionForm
             // 
@@ -321,5 +327,6 @@
         private System.Windows.Forms.Label lblRemainingQuestions;
         private System.Windows.Forms.Label lblRT;
         private System.Windows.Forms.Label lblRemainingTime;
+        private System.Windows.Forms.Timer timerRemaining;
     }
 }

@@ -8,7 +8,7 @@ namespace Proiect_IP_ChestionarAuto
 {
     internal class Question
     {
-        public Question(int id, string title, string optionA, string optionB, string optionC, int answer, string image)
+        public Question(int id, string title, string optionA, string optionB, string optionC, string answer, string image)
         {
             Id = id;
             Title = title;
@@ -24,7 +24,7 @@ namespace Proiect_IP_ChestionarAuto
         public string OptionA { get; set; }
         public string OptionB { get; set; }
         public string OptionC { get; set; }
-        public int Answer { get; set; }
+        public string Answer { get; set; }
         public string Image { get; set; }
     }
 }

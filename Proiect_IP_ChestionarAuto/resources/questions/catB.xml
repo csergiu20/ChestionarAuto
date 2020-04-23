@@ -6,7 +6,7 @@
     <option>b 1</option>
     <option>c 1</option>
     <image>none.jpg</image>
-    <answer>1</answer>
+    <answer>1,2</answer>
   </question>
   <question id="2">
     <title>doi</title>
@@ -14,7 +14,7 @@
     <option>b 2</option>
     <option>c 2</option>
     <image>none.jpg</image>
-    <answer>1</answer>
+    <answer>1,2</answer>
   </question>
   <question id="3">
     <title>trei</title>
@@ -22,7 +22,7 @@
     <option>b 3</option>
     <option>c 3</option>
     <image>none.jpg</image>
-    <answer>1</answer>
+    <answer>1,2,3</answer>
   </question>
   <question id="4">
     <title>patru</title>
@@ -30,7 +30,7 @@
     <option>b 4</option>
     <option>c 4</option>
     <image>none.jpg</image>
-    <answer>1</answer>
+    <answer>1,2</answer>
   </question>
   <question id="5">
     <title>cinci</title>
