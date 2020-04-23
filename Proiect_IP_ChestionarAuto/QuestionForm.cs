@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -8,9 +9,9 @@ namespace Proiect_IP_ChestionarAuto
 {
     public partial class QuestionForm : Form
     {
-        private const int MaxQuestions = 3;
-        private const int MaxWrongAnswers = 5;
-        private int _remainingQuestions = MaxQuestions;
+        private readonly int _maxQuestions;
+        private readonly int _maxWrongAnswers;
+        private int _remainingQuestions;
         private int _timerCounter = 1800;
         private int _correctAnswers;
         private int _wrongAnswers;
@@ -21,20 +22,25 @@ namespace Proiect_IP_ChestionarAuto
 
         private int _pressedButtonTag;
 
-        public QuestionForm(string category)
+        public QuestionForm(string category, int maxQuestions, int maxWrongAnswers)
         {
             InitializeComponent();
+
+            _maxQuestions = maxQuestions;
+            _maxWrongAnswers = maxWrongAnswers;
+            _remainingQuestions = _maxQuestions;
 
             timerRemaining = new Timer();
             timerRemaining.Tick += timerRemaining_Tick;
             timerRemaining.Interval = 1000;
             timerRemaining.Start();
 
-            lblInitialQuestions.Text = MaxQuestions.ToString();
+            lblInitialQuestions.Text = _maxQuestions.ToString();
 
             var xmlManager = new XmlManager(category);
             var totalQuestions = xmlManager.CountQuestions();
-            var randomNumbers = RandomNumbers.Generate(totalQuestions, MaxQuestions);
+
+            var randomNumbers = RandomNumbers.Generate(totalQuestions, _maxQuestions);
             _questions = xmlManager.GetQuestions(randomNumbers);
 
             LoadQuestions();
@@ -69,14 +75,23 @@ namespace Proiect_IP_ChestionarAuto
             btnA.Text = _questions[_questionIndex].OptionA;
             btnB.Text = _questions[_questionIndex].OptionB;
             btnC.Text = _questions[_questionIndex].OptionC;
-            picBoxQImage.Image = Image.FromFile(_questions[_questionIndex].Image);
+
+            try
+            {
+                picBoxQImage.Image = Image.FromFile(_questions[_questionIndex].Image);
+            }
+            catch (FileNotFoundException)
+            {
+                picBoxQImage.Image = Image.FromFile("resources\\images\\0.jpg");
+            }
+
             picBoxQImage.SizeMode = PictureBoxSizeMode.StretchImage;
 
             _currentCorrectAnswers = new List<char>();
 
-            foreach (var c in _questions[_questionIndex].Answer)
+            foreach (var singleAnswer in _questions[_questionIndex].Answer)
             {
-                _currentCorrectAnswers.Add(c);
+                _currentCorrectAnswers.Add(singleAnswer);
             }
         }
 
@@ -84,7 +99,6 @@ namespace Proiect_IP_ChestionarAuto
         {
             lblCorrectAnswers.Text = _correctAnswers.ToString();
             lblWrongAnswers.Text = _wrongAnswers.ToString();
-
             lblRemainingQuestions.Text = (_remainingQuestions--).ToString();
         }
 
@@ -92,8 +106,8 @@ namespace Proiect_IP_ChestionarAuto
         {
             Hide();
 
-            var message = _wrongAnswers == MaxWrongAnswers ? "Ati fost respins!\n" : "Felicitari, ati promovat!\n";
-            message += "Ati raspuns corect la " + _correctAnswers + " din cele " + MaxQuestions + " intrebari.";
+            var message = _wrongAnswers == _maxWrongAnswers ? "Ati fost respins!\n" : "Felicitari, ati promovat!\n";
+            message += "Ati raspuns corect la " + _correctAnswers + " din cele " + _maxQuestions + " intrebari.";
             const string title = "Rezultat";
 
             MessageBox.Show(message, title);
@@ -181,17 +195,17 @@ namespace Proiect_IP_ChestionarAuto
 
             LoadStatistics();
 
-            if (_wrongAnswers == MaxWrongAnswers)
+            if (_wrongAnswers == _maxWrongAnswers)
             {
                 EndQuestionnaire();
             }
 
-            if (_questionIndex < MaxQuestions)
+            if (_questionIndex < _maxQuestions)
             {
                 LoadQuestions();
                 btnResetAnswer_Click(sender, e);
 
-                if (_questionIndex == MaxQuestions - 1)
+                if (_questionIndex == _maxQuestions - 1)
                 {
                     btnAnswerLater.Enabled = false;
                 }

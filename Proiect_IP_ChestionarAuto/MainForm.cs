@@ -1,10 +1,13 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Proiect_IP_ChestionarAuto
 {
     public partial class MainForm : Form
     {
+        private const int MaxQuestions = 3;
+        private const int MaxWrongAnswers = 5;
         private const string AdminPassword = "112";
 
         public MainForm()
@@ -27,14 +30,30 @@ namespace Proiect_IP_ChestionarAuto
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            Hide();
 
             var category = rbCatB.Checked ? "B" : "C";
 
-            var questionForm = new QuestionForm(category);
-            questionForm.ShowDialog();
+            var xmlManager = new XmlManager(category);
+            var totalQuestions = xmlManager.CountQuestions();
 
-            Show();
+            if (totalQuestions < MaxQuestions)
+            {
+                MessageBox.Show("Nu sunt intrebari suficiente!", "Eroare");
+            }
+            else if (File.Exists("resources\\images\\0.jpg")
+            && File.Exists("resources\\questions\\catB.xml"))
+            {
+                Hide();
+
+                var questionForm = new QuestionForm(category, MaxQuestions, MaxWrongAnswers);
+                questionForm.ShowDialog();
+
+                Show();
+            }
+            else
+            {
+                MessageBox.Show("Eroare! Fisiere lipsa!", "Eroare");
+            }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

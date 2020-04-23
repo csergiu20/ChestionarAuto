@@ -48,7 +48,7 @@ namespace Proiect_IP_ChestionarAuto
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(114, 396);
+            this.btnStart.Location = new System.Drawing.Point(114, 392);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(230, 63);
             this.btnStart.TabIndex = 0;
@@ -58,7 +58,7 @@ namespace Proiect_IP_ChestionarAuto
             // 
             // btnAbout
             // 
-            this.btnAbout.Location = new System.Drawing.Point(114, 487);
+            this.btnAbout.Location = new System.Drawing.Point(114, 483);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(230, 63);
             this.btnAbout.TabIndex = 1;
@@ -68,7 +68,7 @@ namespace Proiect_IP_ChestionarAuto
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(114, 578);
+            this.btnExit.Location = new System.Drawing.Point(114, 574);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(230, 63);
             this.btnExit.TabIndex = 2;
@@ -96,11 +96,11 @@ namespace Proiect_IP_ChestionarAuto
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(85, 100);
+            this.btnLogin.Location = new System.Drawing.Point(85, 80);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(121, 40);
             this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "Logheaza-te";
+            this.btnLogin.Text = "Intra";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -109,9 +109,9 @@ namespace Proiect_IP_ChestionarAuto
             this.groupBoxAdmin.Controls.Add(this.lblPassword);
             this.groupBoxAdmin.Controls.Add(this.btnLogin);
             this.groupBoxAdmin.Controls.Add(this.textBoxPassword);
-            this.groupBoxAdmin.Location = new System.Drawing.Point(114, 206);
+            this.groupBoxAdmin.Location = new System.Drawing.Point(114, 223);
             this.groupBoxAdmin.Name = "groupBoxAdmin";
-            this.groupBoxAdmin.Size = new System.Drawing.Size(230, 164);
+            this.groupBoxAdmin.Size = new System.Drawing.Size(230, 142);
             this.groupBoxAdmin.TabIndex = 4;
             this.groupBoxAdmin.TabStop = false;
             this.groupBoxAdmin.Text = "Zona administrator";
@@ -120,7 +120,7 @@ namespace Proiect_IP_ChestionarAuto
             // 
             this.groupBoxCategory.Controls.Add(this.rbCatC);
             this.groupBoxCategory.Controls.Add(this.rbCatB);
-            this.groupBoxCategory.Location = new System.Drawing.Point(114, 86);
+            this.groupBoxCategory.Location = new System.Drawing.Point(114, 103);
             this.groupBoxCategory.Name = "groupBoxCategory";
             this.groupBoxCategory.Size = new System.Drawing.Size(230, 93);
             this.groupBoxCategory.TabIndex = 5;

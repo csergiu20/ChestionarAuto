@@ -65,6 +65,7 @@
             // 
             // lblQTitle
             // 
+            this.lblQTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQTitle.Location = new System.Drawing.Point(79, 102);
             this.lblQTitle.Name = "lblQTitle";
             this.lblQTitle.Size = new System.Drawing.Size(1125, 94);
@@ -74,6 +75,7 @@
             // 
             // btnA
             // 
+            this.btnA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnA.Location = new System.Drawing.Point(79, 223);
             this.btnA.Name = "btnA";
             this.btnA.Size = new System.Drawing.Size(567, 114);
@@ -85,6 +87,7 @@
             // 
             // btnB
             // 
+            this.btnB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnB.Location = new System.Drawing.Point(82, 358);
             this.btnB.Name = "btnB";
             this.btnB.Size = new System.Drawing.Size(567, 114);
@@ -96,6 +99,7 @@
             // 
             // btnC
             // 
+            this.btnC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnC.Location = new System.Drawing.Point(82, 493);
             this.btnC.Name = "btnC";
             this.btnC.Size = new System.Drawing.Size(567, 114);
@@ -108,27 +112,30 @@
             // lblA
             // 
             this.lblA.AutoSize = true;
-            this.lblA.Location = new System.Drawing.Point(34, 272);
+            this.lblA.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblA.Location = new System.Drawing.Point(36, 256);
             this.lblA.Name = "lblA";
-            this.lblA.Size = new System.Drawing.Size(17, 17);
+            this.lblA.Size = new System.Drawing.Size(37, 36);
             this.lblA.TabIndex = 7;
             this.lblA.Text = "A";
             // 
             // lblB
             // 
             this.lblB.AutoSize = true;
-            this.lblB.Location = new System.Drawing.Point(34, 406);
+            this.lblB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblB.Location = new System.Drawing.Point(36, 391);
             this.lblB.Name = "lblB";
-            this.lblB.Size = new System.Drawing.Size(17, 17);
+            this.lblB.Size = new System.Drawing.Size(36, 36);
             this.lblB.TabIndex = 8;
             this.lblB.Text = "B";
             // 
             // lblC
             // 
             this.lblC.AutoSize = true;
-            this.lblC.Location = new System.Drawing.Point(34, 542);
+            this.lblC.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblC.Location = new System.Drawing.Point(36, 526);
             this.lblC.Name = "lblC";
-            this.lblC.Size = new System.Drawing.Size(17, 17);
+            this.lblC.Size = new System.Drawing.Size(37, 36);
             this.lblC.TabIndex = 9;
             this.lblC.Text = "C";
             // 
@@ -144,9 +151,11 @@
             // lblCorrectAnswers
             // 
             this.lblCorrectAnswers.AutoSize = true;
-            this.lblCorrectAnswers.Location = new System.Drawing.Point(894, 31);
+            this.lblCorrectAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorrectAnswers.ForeColor = System.Drawing.Color.Green;
+            this.lblCorrectAnswers.Location = new System.Drawing.Point(892, 31);
             this.lblCorrectAnswers.Name = "lblCorrectAnswers";
-            this.lblCorrectAnswers.Size = new System.Drawing.Size(16, 17);
+            this.lblCorrectAnswers.Size = new System.Drawing.Size(19, 20);
             this.lblCorrectAnswers.TabIndex = 11;
             this.lblCorrectAnswers.Text = "0";
             // 
@@ -162,9 +171,11 @@
             // lblWrongAnswers
             // 
             this.lblWrongAnswers.AutoSize = true;
-            this.lblWrongAnswers.Location = new System.Drawing.Point(1106, 31);
+            this.lblWrongAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWrongAnswers.ForeColor = System.Drawing.Color.Red;
+            this.lblWrongAnswers.Location = new System.Drawing.Point(1101, 31);
             this.lblWrongAnswers.Name = "lblWrongAnswers";
-            this.lblWrongAnswers.Size = new System.Drawing.Size(16, 17);
+            this.lblWrongAnswers.Size = new System.Drawing.Size(19, 20);
             this.lblWrongAnswers.TabIndex = 13;
             this.lblWrongAnswers.Text = "0";
             // 
@@ -192,17 +203,17 @@
             // btnResetAnswer
             // 
             this.btnResetAnswer.Enabled = false;
-            this.btnResetAnswer.Location = new System.Drawing.Point(272, 648);
+            this.btnResetAnswer.Location = new System.Drawing.Point(273, 648);
             this.btnResetAnswer.Name = "btnResetAnswer";
             this.btnResetAnswer.Size = new System.Drawing.Size(181, 65);
             this.btnResetAnswer.TabIndex = 16;
-            this.btnResetAnswer.Text = "Modifica Raspunsul";
+            this.btnResetAnswer.Text = "Modifica raspunsul";
             this.btnResetAnswer.UseVisualStyleBackColor = true;
             this.btnResetAnswer.Click += new System.EventHandler(this.btnResetAnswer_Click);
             // 
             // btnAnswerLater
             // 
-            this.btnAnswerLater.Location = new System.Drawing.Point(79, 648);
+            this.btnAnswerLater.Location = new System.Drawing.Point(82, 648);
             this.btnAnswerLater.Name = "btnAnswerLater";
             this.btnAnswerLater.Size = new System.Drawing.Size(181, 65);
             this.btnAnswerLater.TabIndex = 17;
@@ -231,18 +242,20 @@
             // lblInitialQuestions
             // 
             this.lblInitialQuestions.AutoSize = true;
-            this.lblInitialQuestions.Location = new System.Drawing.Point(123, 31);
+            this.lblInitialQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInitialQuestions.Location = new System.Drawing.Point(120, 31);
             this.lblInitialQuestions.Name = "lblInitialQuestions";
-            this.lblInitialQuestions.Size = new System.Drawing.Size(16, 17);
+            this.lblInitialQuestions.Size = new System.Drawing.Size(19, 20);
             this.lblInitialQuestions.TabIndex = 20;
             this.lblInitialQuestions.Text = "0";
             // 
             // lblRemainingQuestions
             // 
             this.lblRemainingQuestions.AutoSize = true;
-            this.lblRemainingQuestions.Location = new System.Drawing.Point(330, 31);
+            this.lblRemainingQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRemainingQuestions.Location = new System.Drawing.Point(327, 31);
             this.lblRemainingQuestions.Name = "lblRemainingQuestions";
-            this.lblRemainingQuestions.Size = new System.Drawing.Size(16, 17);
+            this.lblRemainingQuestions.Size = new System.Drawing.Size(19, 20);
             this.lblRemainingQuestions.TabIndex = 21;
             this.lblRemainingQuestions.Text = "0";
             // 
@@ -258,9 +271,10 @@
             // lblRemainingTime
             // 
             this.lblRemainingTime.AutoSize = true;
-            this.lblRemainingTime.Location = new System.Drawing.Point(626, 31);
+            this.lblRemainingTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRemainingTime.Location = new System.Drawing.Point(616, 31);
             this.lblRemainingTime.Name = "lblRemainingTime";
-            this.lblRemainingTime.Size = new System.Drawing.Size(52, 17);
+            this.lblRemainingTime.Size = new System.Drawing.Size(67, 20);
             this.lblRemainingTime.TabIndex = 23;
             this.lblRemainingTime.Text = "30 : 00";
             // 
