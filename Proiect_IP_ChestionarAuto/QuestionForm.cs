@@ -14,6 +14,7 @@ namespace Proiect_IP_ChestionarAuto
     public partial class QuestionForm : Form
     {
         private const int MaxQuestions = 3;
+        private const string Category = "B";
 
         private readonly List<Question> _questions;
         private int _questionIndex = 0;
@@ -28,10 +29,10 @@ namespace Proiect_IP_ChestionarAuto
         {
             InitializeComponent();
 
-            var qXml = new XmlExtractor();
-            var totalQuestions = qXml.Count();
+            var xmlManager = new XmlManager(Category);
+            var totalQuestions = xmlManager.CountQuestions();
             var randomNumbers = RandomNumbers.Generate(totalQuestions, MaxQuestions);
-            _questions = qXml.Questions(randomNumbers);
+            _questions = xmlManager.GetQuestions(randomNumbers);
 
             LoadQuestions();
         }

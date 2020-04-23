@@ -7,23 +7,35 @@ using System.Xml;
 
 namespace Proiect_IP_ChestionarAuto
 {
-    internal class XmlExtractor
+    internal class XmlManager
     {
         private const string ImagesPath = "$(SolutionDir)\\..\\..\\..\\resources\\images\\";
-        private const string QuestionsPath = "$(SolutionDir)\\..\\..\\..\\resources\\questions\\catB.xml";
+        private const string QuestionsPath = "$(SolutionDir)\\..\\..\\..\\resources\\questions\\";
+        private readonly string _category;
 
-        public int Count()
+        public XmlManager(string category)
+        {
+            _category = category;
+        }
+
+        public int CountQuestions()
         {
             var document = new XmlDocument();
-            document.Load(QuestionsPath);
+            document.Load(QuestionsPath + "cat" + _category + ".xml");
 
             return document.DocumentElement.Cast<XmlNode>().Count();
         }
 
-        public List<Question> Questions(List<int> numbers)
+        public void AddQuestion(Question question)
+        {
+            //Adds question to xml file
+            throw new NotImplementedException();
+        }
+
+        public List<Question> GetQuestions(List<int> numbers)
         {
             var doc = new XmlDocument();
-            doc.Load(QuestionsPath);
+            doc.Load(QuestionsPath + "cat" + _category + ".xml");
 
             var questions = new List<Question>();
 

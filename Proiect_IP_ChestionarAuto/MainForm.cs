@@ -12,6 +12,8 @@ namespace Proiect_IP_ChestionarAuto
 {
     public partial class MainForm : Form
     {
+        private const string AdminPassword = "112";
+
         public MainForm()
         {
             InitializeComponent();
@@ -36,6 +38,18 @@ namespace Proiect_IP_ChestionarAuto
             var questionForm = new QuestionForm();
             questionForm.ShowDialog();
             Show();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (textBoxPassword.Text == AdminPassword)
+            {
+                MessageBox.Show("Login Succesful!", "Login");
+            }
+            else
+            {
+                MessageBox.Show("Login error!", "Login");
+            }
         }
     }
 }

@@ -59,7 +59,7 @@
       <DependentUpon>QuestionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Question.cs" />
-    <Compile Include="XmlExtractor.cs" />
+    <Compile Include="XmlManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomNumbers.cs" />
