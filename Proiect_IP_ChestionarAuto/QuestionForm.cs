@@ -35,6 +35,7 @@ namespace Proiect_IP_ChestionarAuto
             _questions = xmlManager.GetQuestions(randomNumbers);
 
             LoadQuestions();
+            LoadStatistics();
         }
 
         private void CheckAnswerEvent(object sender, EventArgs e)
@@ -85,6 +86,12 @@ namespace Proiect_IP_ChestionarAuto
             lblCorrectAnswers.Text = _correctAnswers.ToString();
             lblWrongAnswers.Text = _wrongAnswers.ToString();
             _percentage = (int)Math.Round((double)(_correctAnswers * 100) / MaxQuestions);
+
+            lblInitialQuestions.Text = MaxQuestions.ToString();
+            lblRemainingQuestions.Text = "error";
+
+            lblRemainingTime.Text = "error";
+
         }
 
         private void btnExitQForm_Click(object sender, EventArgs e)
