@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace Proiect_IP_ChestionarAuto
 {
-    internal class RandGenerator
+    internal class RandomNumbers
     {
-        public static List<int> ExtragereNumereRandom(int max, int total)
+        public static List<int> Generate(int max, int total)
         {
             var rnd = new Random();
-            var nrlist = new List<int>();
+            var numbers = new List<int>();
 
             for (var i = 0; i < total; i++)
             {
                 var temp = 0;
                 temp = rnd.Next(1, max + 1);
 
-                while (nrlist.Contains(temp))
+                while (numbers.Contains(temp))
                 {
                     temp = rnd.Next(1, max + 1);
                 }
 
-                nrlist.Add(temp);
+                numbers.Add(temp);
             }
 
-            return nrlist;
+            return numbers;
         }
     }
 }
