@@ -28,8 +28,13 @@ namespace Proiect_IP_ChestionarAuto
 
         public bool IsXmlValid(int maxQuestions)
         {
+            // TO DO
+            //
+            // Validate if the xml is written correctly (dtd or something) so that CountQuestions will not give error
+            //
+
             if (!File.Exists("resources\\images\\0.jpg")
-                && !File.Exists(QuestionsPath + "cat" + _category + ".xml"))
+                || !File.Exists(QuestionsPath + "cat" + _category + ".xml"))
             {
                 return false;
             }
