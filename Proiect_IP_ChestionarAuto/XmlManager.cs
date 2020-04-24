@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 using System.Xml;
 
 namespace Proiect_IP_ChestionarAuto
@@ -22,6 +24,21 @@ namespace Proiect_IP_ChestionarAuto
             document.Load(QuestionsPath + "cat" + _category + ".xml");
 
             return document.DocumentElement.Cast<XmlNode>().Count();
+        }
+
+        public bool IsXmlValid(int maxQuestions)
+        {
+            if (!File.Exists("resources\\images\\0.jpg")
+                && !File.Exists(QuestionsPath + "cat" + _category + ".xml"))
+            {
+                return false;
+            }
+            if (CountQuestions() < maxQuestions)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public void AddQuestion(Question question)

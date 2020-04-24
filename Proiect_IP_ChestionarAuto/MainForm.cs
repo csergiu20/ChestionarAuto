@@ -32,16 +32,9 @@ namespace Proiect_IP_ChestionarAuto
         {
 
             var category = rbCatB.Checked ? "B" : "C";
-
             var xmlManager = new XmlManager(category);
-            var totalQuestions = xmlManager.CountQuestions();
 
-            if (totalQuestions < MaxQuestions)
-            {
-                MessageBox.Show("Nu sunt intrebari suficiente!", "Eroare");
-            }
-            else if (File.Exists("resources\\images\\0.jpg")
-            && File.Exists("resources\\questions\\catB.xml"))
+            if (xmlManager.IsXmlValid(MaxQuestions))
             {
                 Hide();
 
@@ -52,13 +45,18 @@ namespace Proiect_IP_ChestionarAuto
             }
             else
             {
-                MessageBox.Show("Eroare! Fisiere lipsa!", "Eroare");
+                MessageBox.Show("Eroare! Exista fisiere lipsa sau invalide!", "Eroare");
             }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(textBoxPassword.Text == AdminPassword ? "Login Succesful!" : "Login error!", "Login");
+            MessageBox.Show(textBoxPassword.Text == AdminPassword ? "Parola corecta!" : "Parola eronata!", "Zona admin");
+        }
+
+        private void textBoxPassword_TextChanged(object sender, EventArgs e)
+        {
+            btnLogin.Enabled = textBoxPassword.Text != "";
         }
     }
 }

@@ -48,12 +48,13 @@ namespace Proiect_IP_ChestionarAuto
             // 
             // btnStart
             // 
+            this.btnStart.BackColor = System.Drawing.Color.Azure;
             this.btnStart.Location = new System.Drawing.Point(114, 392);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(230, 63);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Incepe";
-            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnAbout
@@ -79,28 +80,29 @@ namespace Proiect_IP_ChestionarAuto
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(6, 30);
+            this.lblPassword.Location = new System.Drawing.Point(21, 42);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Padding = new System.Windows.Forms.Padding(10);
-            this.lblPassword.Size = new System.Drawing.Size(73, 37);
+            this.lblPassword.Size = new System.Drawing.Size(53, 17);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Parola:";
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(85, 39);
+            this.textBoxPassword.Location = new System.Drawing.Point(80, 39);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(121, 22);
+            this.textBoxPassword.Size = new System.Drawing.Size(126, 22);
             this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.UseSystemPasswordChar = true;
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(85, 80);
+            this.btnLogin.Enabled = false;
+            this.btnLogin.Location = new System.Drawing.Point(24, 80);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(121, 40);
+            this.btnLogin.Size = new System.Drawing.Size(182, 40);
             this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "Intra";
+            this.btnLogin.Text = "Logheaza-te";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
