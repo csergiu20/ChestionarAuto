@@ -5,7 +5,7 @@ namespace Proiect_IP_ChestionarAuto
 {
     internal static class RandomNumbers
     {
-        public static List<int> Generate(int max, int total)
+        public static IEnumerable<int> Generate(int max, int total)
         {
             var rnd = new Random();
             var numbers = new List<int>();

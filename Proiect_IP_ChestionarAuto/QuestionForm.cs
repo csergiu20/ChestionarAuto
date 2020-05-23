@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Proiect_IP_ChestionarAuto
@@ -11,6 +12,7 @@ namespace Proiect_IP_ChestionarAuto
         private readonly int _maxQuestions;
         private readonly int _maxWrongAnswers;
 
+        private readonly string _imagePath;
         private readonly string _defaultImagePath;
 
         private int _remainingQuestions;
@@ -29,6 +31,7 @@ namespace Proiect_IP_ChestionarAuto
             _maxWrongAnswers = maxWrongAnswers;
             _remainingQuestions = _maxQuestions;
 
+            _imagePath = imagesPath;
             _defaultImagePath = defaultImagePath;
 
             timerRemaining = new Timer();
@@ -36,11 +39,16 @@ namespace Proiect_IP_ChestionarAuto
             timerRemaining.Interval = 1000;
             timerRemaining.Start();
 
-            var xmlManager = new XmlManager(category, imagesPath, questionsPath);
-            var totalQuestions = xmlManager.CountQuestions();
-
+            var jsonManager = new JsonManager(category, questionsPath);
+            var totalQuestions = jsonManager.CountQuestions;
             var randomNumbers = RandomNumbers.Generate(totalQuestions, _maxQuestions);
-            _questions = xmlManager.GetQuestions(randomNumbers);
+
+            _questions = new List<Question>();
+
+            foreach (var number in randomNumbers)
+            {
+                _questions.Add(jsonManager.Questions.ElementAt(number));
+            }
 
             LoadQuestionsAndImage();
             LoadStatistics();
@@ -71,13 +79,14 @@ namespace Proiect_IP_ChestionarAuto
         private void LoadQuestionsAndImage()
         {
             lblQTitle.Text = _questions[_qIndex].Title;
-            btnA.Text = _questions[_qIndex].Options[0].Key;
-            btnB.Text = _questions[_qIndex].Options[1].Key;
-            btnC.Text = _questions[_qIndex].Options[2].Key;
+
+            btnA.Text = _questions[_qIndex].Options.Keys.ElementAt(0);
+            btnB.Text = _questions[_qIndex].Options.Keys.ElementAt(1);
+            btnC.Text = _questions[_qIndex].Options.Keys.ElementAt(2);
 
             try
             {
-                picBoxQImage.Image = Image.FromFile(_questions[_qIndex].Image);
+                picBoxQImage.Image = Image.FromFile(_imagePath + _questions[_qIndex].Image);
             }
             catch (FileNotFoundException)
             {
@@ -129,9 +138,9 @@ namespace Proiect_IP_ChestionarAuto
 
         private bool ArePressedButtonsCorrect()
         {
-            return btnA.Enabled != _questions[_qIndex].Options[0].Value
-                   && btnB.Enabled != _questions[_qIndex].Options[1].Value
-                   && btnC.Enabled != _questions[_qIndex].Options[2].Value;
+            return btnA.Enabled != _questions[_qIndex].Options.Values.ElementAt(0)
+                   && btnB.Enabled != _questions[_qIndex].Options.Values.ElementAt(1)
+                   && btnC.Enabled != _questions[_qIndex].Options.Values.ElementAt(2);
         }
 
         private void btnAnswer_Click(object sender, EventArgs e)

@@ -1,0 +1,56 @@
+[
+  {
+    "title": "unu",
+    "options": {
+      "a1": true,
+      "b1": false,
+      "c1": false
+    },
+    "image": "0.jpg"
+  },
+  {
+    "title": "doi",
+    "options": {
+      "a2": true,
+      "b2": true,
+      "c2": false
+    },
+    "image": "0.jpg"
+  },
+  {
+    "title": "trei",
+    "options": {
+      "a3": true,
+      "b3": true,
+      "c3": true
+    },
+    "image": "0.jpg"
+  },
+  {
+    "title": "patru",
+    "options": {
+      "a4": false,
+      "b4": false,
+      "c4": true
+    },
+    "image": "0.jpg"
+  },
+  {
+    "title": "cinci",
+    "options": {
+      "a5": false,
+      "b5": true,
+      "c5": true
+    },
+    "image": "0.jpg"
+  },
+  {
+    "title": "sase",
+    "options": {
+      "a6": false,
+      "b6": true,
+      "c6": false
+    },
+    "image": "0.jpg"
+  }
+]
