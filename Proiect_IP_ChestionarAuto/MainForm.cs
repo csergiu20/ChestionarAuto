@@ -8,7 +8,6 @@ namespace Proiect_IP_ChestionarAuto
     {
         private const int MaxQuestions = 3;
         private const int MaxWrongAnswers = 5;
-        private const string AdminPassword = "112";
 
         public MainForm()
         {
@@ -47,16 +46,6 @@ namespace Proiect_IP_ChestionarAuto
             {
                 MessageBox.Show("Eroare! Exista fisiere lipsa sau invalide!", "Eroare");
             }
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(textBoxPassword.Text == AdminPassword ? "Parola corecta!" : "Parola eronata!", "Zona admin");
-        }
-
-        private void textBoxPassword_TextChanged(object sender, EventArgs e)
-        {
-            btnLogin.Enabled = textBoxPassword.Text != "";
         }
     }
 }

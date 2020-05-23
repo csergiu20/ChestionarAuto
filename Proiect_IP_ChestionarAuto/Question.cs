@@ -13,12 +13,12 @@
             Image = image;
         }
 
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string OptionA { get; set; }
-        public string OptionB { get; set; }
-        public string OptionC { get; set; }
-        public string Answer { get; set; }
-        public string Image { get; set; }
+        public int Id { get; }
+        public string Title { get; }
+        public string OptionA { get; }
+        public string OptionB { get; }
+        public string OptionC { get; }
+        public string Answer { get; }
+        public string Image { get; }
     }
 }

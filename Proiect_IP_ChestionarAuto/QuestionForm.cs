@@ -11,6 +11,7 @@ namespace Proiect_IP_ChestionarAuto
     {
         private readonly int _maxQuestions;
         private readonly int _maxWrongAnswers;
+
         private int _remainingQuestions;
         private int _timerCounter = 1800;
         private int _correctAnswers;
@@ -134,9 +135,13 @@ namespace Proiect_IP_ChestionarAuto
             btnAnswer.Enabled = false;
         }
 
-        private void btnAnswer_Click(object sender, EventArgs e)
+        private void CheckIfPressedButtonsAreTheCorrectAnswerV2()
         {
 
+        }
+
+        private void CheckIfPressedButtonsAreTheCorrectAnswer()
+        {
             if (btnA.Enabled == false && _currentCorrectAnswers.Contains('A')
                                             && btnB.Enabled == false && _currentCorrectAnswers.Contains('B')
                                             && btnC.Enabled == false && _currentCorrectAnswers.Contains('C')
@@ -190,6 +195,11 @@ namespace Proiect_IP_ChestionarAuto
             {
                 _wrongAnswers++;
             }
+        }
+
+        private void btnAnswer_Click(object sender, EventArgs e)
+        {
+            CheckIfPressedButtonsAreTheCorrectAnswer();
 
             _questionIndex++;
 

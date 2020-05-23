@@ -46,12 +46,6 @@ namespace Proiect_IP_ChestionarAuto
             return true;
         }
 
-        public void AddQuestion(Question question)
-        {
-            //Adds question to xml file
-            throw new NotImplementedException();
-        }
-
         public List<Question> GetQuestions(List<int> numbers)
         {
             var doc = new XmlDocument();
