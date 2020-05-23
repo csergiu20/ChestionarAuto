@@ -12,11 +12,11 @@ namespace Proiect_IP_ChestionarAuto
 
             for (var i = 0; i < total; i++)
             {
-                var temp = rnd.Next(1, max + 1);
+                var temp = rnd.Next(0, max );
 
                 while (numbers.Contains(temp))
                 {
-                    temp = rnd.Next(1, max + 1);
+                    temp = rnd.Next(0, max);
                 }
 
                 numbers.Add(temp);
