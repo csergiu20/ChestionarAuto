@@ -12,7 +12,7 @@ namespace Proiect_IP_ChestionarAuto
 
             for (var i = 0; i < total; i++)
             {
-                var temp = rnd.Next(0, max );
+                var temp = rnd.Next(0, max);
 
                 while (numbers.Contains(temp))
                 {
