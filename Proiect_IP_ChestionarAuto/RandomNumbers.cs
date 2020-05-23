@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Proiect_IP_ChestionarAuto
 {
-    internal class RandomNumbers
+    internal static class RandomNumbers
     {
         public static List<int> Generate(int max, int total)
         {

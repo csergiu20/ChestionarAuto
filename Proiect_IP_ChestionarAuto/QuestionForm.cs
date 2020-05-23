@@ -127,11 +127,16 @@ namespace Proiect_IP_ChestionarAuto
             btnAnswer.Enabled = false;
         }
 
-        private void CheckIfPressedButtonsAreTheCorrectAnswer()
+        private bool ArePressedButtonsCorrect()
         {
-            if (btnA.Enabled != _questions[_qIndex].Options[0].Value
-                && btnB.Enabled != _questions[_qIndex].Options[1].Value
-                && btnC.Enabled != _questions[_qIndex].Options[2].Value)
+            return btnA.Enabled != _questions[_qIndex].Options[0].Value
+                   && btnB.Enabled != _questions[_qIndex].Options[1].Value
+                   && btnC.Enabled != _questions[_qIndex].Options[2].Value;
+        }
+
+        private void btnAnswer_Click(object sender, EventArgs e)
+        {
+            if (ArePressedButtonsCorrect())
             {
                 _correctAnswers++;
             }
@@ -139,11 +144,6 @@ namespace Proiect_IP_ChestionarAuto
             {
                 _wrongAnswers++;
             }
-        }
-
-        private void btnAnswer_Click(object sender, EventArgs e)
-        {
-            CheckIfPressedButtonsAreTheCorrectAnswer();
 
             _qIndex++;
 
