@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Proiect_IP_ChestionarAuto
@@ -12,18 +11,17 @@ namespace Proiect_IP_ChestionarAuto
         private readonly int _maxQuestions;
         private readonly int _maxWrongAnswers;
 
+        private readonly string _defaultImagePath;
+
         private int _remainingQuestions;
         private int _timerCounter = 1800;
         private int _correctAnswers;
         private int _wrongAnswers;
 
         private readonly List<Question> _questions;
-        private List<char> _currentCorrectAnswers;
-        private int _questionIndex;
+        private int _qIndex;
 
-        private int _pressedButtonTag;
-
-        public QuestionForm(string category, int maxQuestions, int maxWrongAnswers)
+        public QuestionForm(string category, int maxQuestions, int maxWrongAnswers, string imagesPath, string defaultImagePath, string questionsPath)
         {
             InitializeComponent();
 
@@ -31,27 +29,27 @@ namespace Proiect_IP_ChestionarAuto
             _maxWrongAnswers = maxWrongAnswers;
             _remainingQuestions = _maxQuestions;
 
+            _defaultImagePath = defaultImagePath;
+
             timerRemaining = new Timer();
             timerRemaining.Tick += timerRemaining_Tick;
             timerRemaining.Interval = 1000;
             timerRemaining.Start();
 
-            lblInitialQuestions.Text = _maxQuestions.ToString();
-
-            var xmlManager = new XmlManager(category);
+            var xmlManager = new XmlManager(category, imagesPath, questionsPath);
             var totalQuestions = xmlManager.CountQuestions();
 
             var randomNumbers = RandomNumbers.Generate(totalQuestions, _maxQuestions);
             _questions = xmlManager.GetQuestions(randomNumbers);
 
-            LoadQuestions();
+            LoadQuestionsAndImage();
             LoadStatistics();
         }
 
         private void CheckAnswerEvent(object sender, EventArgs e)
         {
             var senderObject = (Button)sender;
-            _pressedButtonTag = Convert.ToInt32(senderObject.Tag);
+            var _pressedButtonTag = Convert.ToInt32(senderObject.Tag);
 
             switch (_pressedButtonTag)
             {
@@ -70,30 +68,23 @@ namespace Proiect_IP_ChestionarAuto
             btnAnswer.Enabled = true;
         }
 
-        private void LoadQuestions()
+        private void LoadQuestionsAndImage()
         {
-            lblQTitle.Text = _questions[_questionIndex].Title;
-            btnA.Text = _questions[_questionIndex].OptionA;
-            btnB.Text = _questions[_questionIndex].OptionB;
-            btnC.Text = _questions[_questionIndex].OptionC;
+            lblQTitle.Text = _questions[_qIndex].Title;
+            btnA.Text = _questions[_qIndex].Options[0].Key;
+            btnB.Text = _questions[_qIndex].Options[1].Key;
+            btnC.Text = _questions[_qIndex].Options[2].Key;
 
             try
             {
-                picBoxQImage.Image = Image.FromFile(_questions[_questionIndex].Image);
+                picBoxQImage.Image = Image.FromFile(_questions[_qIndex].Image);
             }
             catch (FileNotFoundException)
             {
-                picBoxQImage.Image = Image.FromFile("resources\\images\\0.jpg");
+                picBoxQImage.Image = Image.FromFile(_defaultImagePath);
             }
 
             picBoxQImage.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            _currentCorrectAnswers = new List<char>();
-
-            foreach (var singleAnswer in _questions[_questionIndex].Answer)
-            {
-                _currentCorrectAnswers.Add(singleAnswer);
-            }
         }
 
         private void LoadStatistics()
@@ -101,6 +92,7 @@ namespace Proiect_IP_ChestionarAuto
             lblCorrectAnswers.Text = _correctAnswers.ToString();
             lblWrongAnswers.Text = _wrongAnswers.ToString();
             lblRemainingQuestions.Text = (_remainingQuestions--).ToString();
+            lblInitialQuestions.Text = _maxQuestions.ToString();
         }
 
         private void EndQuestionnaire()
@@ -117,12 +109,12 @@ namespace Proiect_IP_ChestionarAuto
 
         private void btnAnswerLater_Click(object sender, EventArgs e)
         {
-            var temp = _questions[_questionIndex];
-            _questions.Remove(_questions[_questionIndex]);
+            var temp = _questions[_qIndex];
+            _questions.Remove(_questions[_qIndex]);
             _questions.Add(temp);
 
             btnResetAnswer_Click(sender, e);
-            LoadQuestions();
+            LoadQuestionsAndImage();
         }
 
         private void btnResetAnswer_Click(object sender, EventArgs e)
@@ -135,59 +127,11 @@ namespace Proiect_IP_ChestionarAuto
             btnAnswer.Enabled = false;
         }
 
-        private void CheckIfPressedButtonsAreTheCorrectAnswerV2()
-        {
-
-        }
-
         private void CheckIfPressedButtonsAreTheCorrectAnswer()
         {
-            if (btnA.Enabled == false && _currentCorrectAnswers.Contains('A')
-                                            && btnB.Enabled == false && _currentCorrectAnswers.Contains('B')
-                                            && btnC.Enabled == false && _currentCorrectAnswers.Contains('C')
-                                            && _currentCorrectAnswers.Count() == 3)
-            {
-                _correctAnswers++;
-            }
-            else if (btnA.Enabled == false && _currentCorrectAnswers.Contains('A')
-                                            && btnB.Enabled == false && _currentCorrectAnswers.Contains('B')
-                                            && btnC.Enabled
-                                            && _currentCorrectAnswers.Count() == 2)
-            {
-                _correctAnswers++;
-            }
-            else if (btnA.Enabled == false && _currentCorrectAnswers.Contains('A')
-                                           && btnC.Enabled == false && _currentCorrectAnswers.Contains('C')
-                                           && btnB.Enabled
-                                           && _currentCorrectAnswers.Count() == 2)
-            {
-                _correctAnswers++;
-            }
-            else if (btnB.Enabled == false && _currentCorrectAnswers.Contains('B')
-                                           && btnC.Enabled == false && _currentCorrectAnswers.Contains('C')
-                                           && btnA.Enabled
-                                           && _currentCorrectAnswers.Count() == 2)
-            {
-                _correctAnswers++;
-            }
-            else if (btnA.Enabled == false && _currentCorrectAnswers.Contains('A')
-                                           && btnC.Enabled
-                                           && btnB.Enabled
-                                           && _currentCorrectAnswers.Count() == 1)
-            {
-                _correctAnswers++;
-            }
-            else if (btnB.Enabled == false && _currentCorrectAnswers.Contains('B')
-                                           && btnC.Enabled
-                                           && btnA.Enabled
-                                           && _currentCorrectAnswers.Count() == 1)
-            {
-                _correctAnswers++;
-            }
-            else if (btnC.Enabled == false && _currentCorrectAnswers.Contains('C')
-                                           && btnB.Enabled
-                                           && btnA.Enabled
-                                           && _currentCorrectAnswers.Count() == 1)
+            if (btnA.Enabled != _questions[_qIndex].Options[0].Value
+                && btnB.Enabled != _questions[_qIndex].Options[1].Value
+                && btnC.Enabled != _questions[_qIndex].Options[2].Value)
             {
                 _correctAnswers++;
             }
@@ -201,7 +145,7 @@ namespace Proiect_IP_ChestionarAuto
         {
             CheckIfPressedButtonsAreTheCorrectAnswer();
 
-            _questionIndex++;
+            _qIndex++;
 
             LoadStatistics();
 
@@ -210,12 +154,12 @@ namespace Proiect_IP_ChestionarAuto
                 EndQuestionnaire();
             }
 
-            if (_questionIndex < _maxQuestions)
+            if (_qIndex < _maxQuestions)
             {
-                LoadQuestions();
+                LoadQuestionsAndImage();
                 btnResetAnswer_Click(sender, e);
 
-                if (_questionIndex == _maxQuestions - 1)
+                if (_qIndex == _maxQuestions - 1)
                 {
                     btnAnswerLater.Enabled = false;
                 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Windows.Forms;
 
 namespace Proiect_IP_ChestionarAuto
@@ -8,6 +7,10 @@ namespace Proiect_IP_ChestionarAuto
     {
         private const int MaxQuestions = 3;
         private const int MaxWrongAnswers = 5;
+
+        private const string ImagesPath = "resources\\images\\";
+        private const string DefaultImagePath = "resources\\images\\0.jpg";
+        private const string QuestionsPath = "resources\\questions\\";
 
         public MainForm()
         {
@@ -29,23 +32,14 @@ namespace Proiect_IP_ChestionarAuto
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-
             var category = rbCatB.Checked ? "B" : "C";
-            var xmlManager = new XmlManager(category);
-
-            if (xmlManager.IsXmlValid(MaxQuestions))
-            {
-                Hide();
-
-                var questionForm = new QuestionForm(category, MaxQuestions, MaxWrongAnswers);
-                questionForm.ShowDialog();
-
-                Show();
-            }
-            else
-            {
-                MessageBox.Show("Eroare! Exista fisiere lipsa sau invalide!", "Eroare");
-            }
+            
+            Hide();
+            
+            var questionForm = new QuestionForm(category, MaxQuestions, MaxWrongAnswers, ImagesPath, DefaultImagePath, QuestionsPath);
+            questionForm.ShowDialog();
+            
+            Show();
         }
     }
 }
