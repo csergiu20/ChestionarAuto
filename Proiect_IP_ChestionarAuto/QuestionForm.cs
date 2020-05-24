@@ -184,9 +184,18 @@ namespace Proiect_IP_ChestionarAuto
         {
             lblQTitle.Text = _questions[_qIndex].Title;
 
-            btnA.Text = _questions[_qIndex].Options.Keys.ElementAt(0);
-            btnB.Text = _questions[_qIndex].Options.Keys.ElementAt(1);
-            btnC.Text = _questions[_qIndex].Options.Keys.ElementAt(2);
+            try
+            {
+                btnA.Text = _questions[_qIndex].Options.Keys.ElementAt(0);
+                btnB.Text = _questions[_qIndex].Options.Keys.ElementAt(1);
+                btnC.Text = _questions[_qIndex].Options.Keys.ElementAt(2);
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                var message = "Fisierul JSON este invalid! La o intrebare lipseste una din optiuni!";
+                MessageBox.Show(message, "Eroare!");
+                Close();
+            }
 
             try
             {
