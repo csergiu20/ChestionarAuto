@@ -1,0 +1,17 @@
+﻿Pentru a incepe selectati una din categoriile de conducere si apoi apasati butonul "Incepe".
+
+Trebuie sa raspundeti corect la 21 din cele 26 de intrebari pentru a promova.
+
+Veti pica automat daca ati facut 5 greseli sau daca nu v-ati incadrat in cele 30 de minute disponibile pentru a raspunde corect la cel putin 21 de intrebari.
+
+Dupa inceperea testului aveti optiunea de a raspunde mai tarziu la o intrebare apasand butonul "Raspunde mai tarziu".
+
+Daca vreti sa modificati raspunsurile alese inainte de a trimite puteti face asta apasand butonul "Modifica raspuns".
+
+Dupa ce ati ales toate variantele pe care le considerati corecte, apasati butonul "Trimite raspunsul".
+
+Puteti parasi in orice moment simularea de testare apasand butonul "Iesire".
+
+De asemenea puteti urmari in timp real in partea de sus timpul ramas, numarul de intrebari ramase, numarul de intrebari la care ati raspuns corect si numarul de intrebari la care ati raspuns gresit.
+
+La finalul testului veti afla daca ati promovat sau daca ati picat, dar si numarul de intrebari la care ati reusit sa raspundeti corect.

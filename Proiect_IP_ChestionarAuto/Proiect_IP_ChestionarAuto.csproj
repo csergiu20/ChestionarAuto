@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationIcon>internalResources\icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -94,6 +94,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -123,8 +124,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="icon.ico" />
-    <Content Include="resources\icon.ico" />
+    <EmbeddedResource Include="internalResources\default.jpg" />
+    <EmbeddedResource Include="internalResources\help.txt" />
+    <EmbeddedResource Include="internalResources\icon.ico" />
     <Content Include="resources\images\10.jpg" />
     <Content Include="resources\images\12.jpg" />
     <Content Include="resources\images\16.jpg" />
@@ -142,8 +144,8 @@
     <Content Include="resources\images\5.jpg" />
     <Content Include="resources\images\7.jpg" />
     <Content Include="resources\images\8.jpg" />
-    <Content Include="resources\images\default.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>XCOPY "$(SolutionDir)\Proiect_IP_ChestionarAuto\resources" "$(TargetDir)resources\" /S /Y</PostBuildEvent>

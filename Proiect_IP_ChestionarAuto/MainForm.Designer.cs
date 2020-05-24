@@ -31,7 +31,6 @@ namespace Proiect_IP_ChestionarAuto
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btnStart = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -42,6 +41,7 @@ namespace Proiect_IP_ChestionarAuto
             this.rbCatA = new System.Windows.Forms.RadioButton();
             this.rbCatD = new System.Windows.Forms.RadioButton();
             this.rbCatTr = new System.Windows.Forms.RadioButton();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.groupBoxCategory.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -152,17 +152,28 @@ namespace Proiect_IP_ChestionarAuto
             this.rbCatTr.Text = "Tr";
             this.rbCatTr.UseVisualStyleBackColor = true;
             // 
+            // btnHelp
+            // 
+            this.btnHelp.Cursor = System.Windows.Forms.Cursors.Help;
+            this.btnHelp.Location = new System.Drawing.Point(376, 12);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(74, 37);
+            this.btnHelp.TabIndex = 7;
+            this.btnHelp.Text = "Ajutor";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(462, 621);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblFormTitle);
             this.Controls.Add(this.groupBoxCategory);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.btnStart);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Chestionar Auto";
             this.groupBoxCategory.ResumeLayout(false);
@@ -184,6 +195,7 @@ namespace Proiect_IP_ChestionarAuto
         public RadioButton rbCatTr;
         public RadioButton rbCatD;
         public RadioButton rbCatA;
+        private Button btnHelp;
     }
 }
 

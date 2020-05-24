@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Proiect_IP_ChestionarAuto.Properties;
 
 namespace Proiect_IP_ChestionarAuto
 {
@@ -26,6 +27,7 @@ namespace Proiect_IP_ChestionarAuto
         public QuestionForm(string category, int maxQuestions, int maxWrongAnswers, string imagesPath, string defaultImagePath, string questionsPath)
         {
             InitializeComponent();
+            Icon = Resources.icon;
 
             _maxQuestions = maxQuestions;
             _maxWrongAnswers = maxWrongAnswers;
@@ -192,18 +194,25 @@ namespace Proiect_IP_ChestionarAuto
             }
             catch (System.ArgumentOutOfRangeException)
             {
-                var message = "Fisierul JSON este invalid! La o intrebare lipseste una din optiuni!";
-                MessageBox.Show(message, "Eroare!");
+                const string message = "Fisierul JSON este invalid! La o intrebare lipseste una din optiuni!";
+                MessageBox.Show(message, "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
 
-            try
+            if (_questions[_qIndex].Image == null)
             {
-                picBoxQImage.Image = Image.FromFile(_imagePath + _questions[_qIndex].Image);
+                picBoxQImage.Image = Resources._default;
             }
-            catch (FileNotFoundException)
+            else
             {
-                picBoxQImage.Image = Image.FromFile(_defaultImagePath);
+                try
+                {
+                    picBoxQImage.Image = Image.FromFile(_imagePath + _questions[_qIndex].Image);
+                }
+                catch (FileNotFoundException)
+                {
+                    picBoxQImage.Image = Resources._default;
+                }
             }
 
             picBoxQImage.SizeMode = PictureBoxSizeMode.StretchImage;

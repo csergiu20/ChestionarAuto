@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuestionForm));
             this.picBoxQImage = new System.Windows.Forms.PictureBox();
             this.lblQTitle = new System.Windows.Forms.Label();
             this.btnA = new System.Windows.Forms.Button();
@@ -310,7 +309,6 @@
             this.Controls.Add(this.btnA);
             this.Controls.Add(this.lblQTitle);
             this.Controls.Add(this.picBoxQImage);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuestionForm";
             this.Text = "Intrebari";
             ((System.ComponentModel.ISupportInitialize)(this.picBoxQImage)).EndInit();

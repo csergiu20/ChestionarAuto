@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Proiect_IP_ChestionarAuto.Properties;
 
 namespace Proiect_IP_ChestionarAuto
 {
@@ -16,6 +17,7 @@ namespace Proiect_IP_ChestionarAuto
         public MainForm()
         {
             InitializeComponent();
+            Icon = Resources.icon;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -26,9 +28,13 @@ namespace Proiect_IP_ChestionarAuto
         private void btnAbout_Click(object sender, EventArgs e)
         {
             const string message = "Proiect IP\nCorban Sergiu-Stefan\nVelovici Florin-Cristian\n1309B";
-            const string title = "Despre";
 
-            MessageBox.Show(message, title);
+            MessageBox.Show(message, "Despre", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Resources.help, "Ajutor", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -37,41 +43,30 @@ namespace Proiect_IP_ChestionarAuto
 
             try
             {
-                var defImage = Image.FromFile(DefaultImagePath);
-            }
-            catch (System.IO.FileNotFoundException)
-            {
-                var message = "Imaginea default.jpg nu a fost gasita!";
-                MessageBox.Show(message, "Eroare");
-                return;
-            }
-
-            try
-            {
                 var jMan = new JsonManager(category, QuestionsPath);
             }
             catch (System.IO.DirectoryNotFoundException)
             {
                 var message = "Folderul de intrebari nu a fost gasit!";
-                MessageBox.Show(message, "Eroare!");
+                MessageBox.Show(message, "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             catch (System.IO.FileNotFoundException)
             {
                 var message = "Fisierul " + "cat" + category + ".json nu a fost gasit sau categoria nu a fost implementata!";
-                MessageBox.Show(message, "Eroare");
+                MessageBox.Show(message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             catch (Newtonsoft.Json.JsonReaderException)
             {
                 var message = "Fisierul " + "cat" + category + ".json este invalid!";
-                MessageBox.Show(message, "Eroare!");
+                MessageBox.Show(message, "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             catch (Exception exception)
             {
                 var message = "Eroare neasteptata: " + exception;
-                MessageBox.Show(message, "Eroare!");
+                MessageBox.Show(message, "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -106,7 +101,7 @@ namespace Proiect_IP_ChestionarAuto
                 return "T";
             }
 
-            return "ERROR";
+            return "Error";
         }
     }
 }
