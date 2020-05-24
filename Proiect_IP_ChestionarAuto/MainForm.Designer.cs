@@ -38,13 +38,16 @@ namespace Proiect_IP_ChestionarAuto
             this.rbCatC = new System.Windows.Forms.RadioButton();
             this.rbCatB = new System.Windows.Forms.RadioButton();
             this.lblFormTitle = new System.Windows.Forms.Label();
+            this.rbCatA = new System.Windows.Forms.RadioButton();
+            this.rbCatD = new System.Windows.Forms.RadioButton();
+            this.rbCatTr = new System.Windows.Forms.RadioButton();
             this.groupBoxCategory.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnStart
             // 
             this.btnStart.BackColor = System.Drawing.Color.Azure;
-            this.btnStart.Location = new System.Drawing.Point(114, 245);
+            this.btnStart.Location = new System.Drawing.Point(114, 324);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(230, 63);
             this.btnStart.TabIndex = 0;
@@ -54,7 +57,7 @@ namespace Proiect_IP_ChestionarAuto
             // 
             // btnAbout
             // 
-            this.btnAbout.Location = new System.Drawing.Point(114, 336);
+            this.btnAbout.Location = new System.Drawing.Point(114, 415);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(230, 63);
             this.btnAbout.TabIndex = 1;
@@ -64,7 +67,7 @@ namespace Proiect_IP_ChestionarAuto
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(114, 427);
+            this.btnExit.Location = new System.Drawing.Point(114, 506);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(230, 63);
             this.btnExit.TabIndex = 2;
@@ -74,11 +77,14 @@ namespace Proiect_IP_ChestionarAuto
             // 
             // groupBoxCategory
             // 
+            this.groupBoxCategory.Controls.Add(this.rbCatTr);
+            this.groupBoxCategory.Controls.Add(this.rbCatD);
+            this.groupBoxCategory.Controls.Add(this.rbCatA);
             this.groupBoxCategory.Controls.Add(this.rbCatC);
             this.groupBoxCategory.Controls.Add(this.rbCatB);
             this.groupBoxCategory.Location = new System.Drawing.Point(114, 117);
             this.groupBoxCategory.Name = "groupBoxCategory";
-            this.groupBoxCategory.Size = new System.Drawing.Size(230, 93);
+            this.groupBoxCategory.Size = new System.Drawing.Size(230, 177);
             this.groupBoxCategory.TabIndex = 5;
             this.groupBoxCategory.TabStop = false;
             this.groupBoxCategory.Text = "Categorie";
@@ -86,24 +92,23 @@ namespace Proiect_IP_ChestionarAuto
             // rbCatC
             // 
             this.rbCatC.AutoSize = true;
-            this.rbCatC.Enabled = false;
-            this.rbCatC.Location = new System.Drawing.Point(7, 55);
+            this.rbCatC.Location = new System.Drawing.Point(7, 86);
             this.rbCatC.Name = "rbCatC";
-            this.rbCatC.Size = new System.Drawing.Size(103, 21);
+            this.rbCatC.Size = new System.Drawing.Size(63, 21);
             this.rbCatC.TabIndex = 1;
-            this.rbCatC.Text = "Categoria C";
+            this.rbCatC.Text = "C, C1";
             this.rbCatC.UseVisualStyleBackColor = true;
             // 
             // rbCatB
             // 
             this.rbCatB.AutoSize = true;
             this.rbCatB.Checked = true;
-            this.rbCatB.Location = new System.Drawing.Point(7, 22);
+            this.rbCatB.Location = new System.Drawing.Point(7, 59);
             this.rbCatB.Name = "rbCatB";
-            this.rbCatB.Size = new System.Drawing.Size(103, 21);
+            this.rbCatB.Size = new System.Drawing.Size(63, 21);
             this.rbCatB.TabIndex = 0;
             this.rbCatB.TabStop = true;
-            this.rbCatB.Text = "Categoria B";
+            this.rbCatB.Text = "B, B1";
             this.rbCatB.UseVisualStyleBackColor = true;
             // 
             // lblFormTitle
@@ -116,11 +121,41 @@ namespace Proiect_IP_ChestionarAuto
             this.lblFormTitle.TabIndex = 6;
             this.lblFormTitle.Text = "Chestionar Auto";
             // 
+            // rbCatA
+            // 
+            this.rbCatA.AutoSize = true;
+            this.rbCatA.Location = new System.Drawing.Point(7, 32);
+            this.rbCatA.Name = "rbCatA";
+            this.rbCatA.Size = new System.Drawing.Size(116, 21);
+            this.rbCatA.TabIndex = 2;
+            this.rbCatA.Text = "A, A1, A2, AM";
+            this.rbCatA.UseVisualStyleBackColor = true;
+            // 
+            // rbCatD
+            // 
+            this.rbCatD.AutoSize = true;
+            this.rbCatD.Location = new System.Drawing.Point(7, 113);
+            this.rbCatD.Name = "rbCatD";
+            this.rbCatD.Size = new System.Drawing.Size(114, 21);
+            this.rbCatD.TabIndex = 3;
+            this.rbCatD.Text = "D, D1, Tb, Tv";
+            this.rbCatD.UseVisualStyleBackColor = true;
+            // 
+            // rbCatTr
+            // 
+            this.rbCatTr.AutoSize = true;
+            this.rbCatTr.Location = new System.Drawing.Point(7, 140);
+            this.rbCatTr.Name = "rbCatTr";
+            this.rbCatTr.Size = new System.Drawing.Size(43, 21);
+            this.rbCatTr.TabIndex = 4;
+            this.rbCatTr.Text = "Tr";
+            this.rbCatTr.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 569);
+            this.ClientSize = new System.Drawing.Size(462, 621);
             this.Controls.Add(this.lblFormTitle);
             this.Controls.Add(this.groupBoxCategory);
             this.Controls.Add(this.btnExit);
@@ -144,6 +179,9 @@ namespace Proiect_IP_ChestionarAuto
         public RadioButton rbCatC;
         public RadioButton rbCatB;
         private Label lblFormTitle;
+        public RadioButton rbCatTr;
+        public RadioButton rbCatD;
+        public RadioButton rbCatA;
     }
 }
 
