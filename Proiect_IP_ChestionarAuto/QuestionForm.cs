@@ -14,7 +14,6 @@ namespace Proiect_IP_ChestionarAuto
         private readonly int _maxWrongAnswers;
 
         private readonly string _imagePath;
-        private readonly string _defaultImagePath;
 
         private int _remainingQuestions;
         private int _timerCounter = 1800;
@@ -24,7 +23,7 @@ namespace Proiect_IP_ChestionarAuto
         private List<Question> _questions;
         private int _qIndex;
 
-        public QuestionForm(string category, int maxQuestions, int maxWrongAnswers, string imagesPath, string defaultImagePath, string questionsPath)
+        public QuestionForm(string category, int maxQuestions, int maxWrongAnswers, string imagesPath, string questionsPath)
         {
             InitializeComponent();
             Icon = Resources.icon;
@@ -33,7 +32,6 @@ namespace Proiect_IP_ChestionarAuto
             _maxWrongAnswers = maxWrongAnswers;
             _remainingQuestions = _maxQuestions;
             _imagePath = imagesPath;
-            _defaultImagePath = defaultImagePath;
 
             InitTimer();
             InitQuestions(category, questionsPath);
@@ -244,7 +242,17 @@ namespace Proiect_IP_ChestionarAuto
         {
             Hide();
 
-            var message = _wrongAnswers == _maxWrongAnswers ? "Ati fost respins!\n" : "Felicitari, ati promovat!\n";
+            string message;
+
+            if (_wrongAnswers == _maxWrongAnswers || _correctAnswers < _maxQuestions - _maxWrongAnswers + 1)
+            {
+                message = "Ati fost respins!\n";
+            }
+            else
+            {
+                message = "Felicitari, ati promovat!\n";
+            }
+
             message += "Ati raspuns corect la " + _correctAnswers + " din cele " + _maxQuestions + " intrebari.";
             const string title = "Rezultat";
 

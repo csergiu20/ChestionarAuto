@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 using Proiect_IP_ChestionarAuto.Properties;
 
@@ -11,7 +10,6 @@ namespace Proiect_IP_ChestionarAuto
         private const int MaxWrongAnswers = 5;
 
         private const string ImagesPath = "resources\\images\\";
-        private const string DefaultImagePath = "resources\\images\\default.jpg";
         private const string QuestionsPath = "resources\\questions\\";
 
         public MainForm()
@@ -72,7 +70,7 @@ namespace Proiect_IP_ChestionarAuto
 
             Hide();
 
-            var questionForm = new QuestionForm(category, MaxQuestions, MaxWrongAnswers, ImagesPath, DefaultImagePath, QuestionsPath);
+            var questionForm = new QuestionForm(category, MaxQuestions, MaxWrongAnswers, ImagesPath, QuestionsPath);
             questionForm.ShowDialog();
 
             Show();

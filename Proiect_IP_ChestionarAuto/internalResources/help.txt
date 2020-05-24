@@ -1,8 +1,8 @@
 ﻿Pentru a incepe selectati una din categoriile de conducere si apoi apasati butonul "Incepe".
 
-Trebuie sa raspundeti corect la 21 din cele 26 de intrebari pentru a promova.
+Trebuie sa raspundeti corect la 22 din cele 26 de intrebari pentru a promova.
 
-Veti pica automat daca ati facut 5 greseli sau daca nu v-ati incadrat in cele 30 de minute disponibile pentru a raspunde corect la cel putin 21 de intrebari.
+Veti pica automat daca ati facut 5 greseli sau daca nu v-ati incadrat in cele 30 de minute disponibile pentru a raspunde corect la cel putin 22 de intrebari.
 
 Dupa inceperea testului aveti optiunea de a raspunde mai tarziu la o intrebare apasand butonul "Raspunde mai tarziu".
 
