@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Proiect la Ingineria Programarii")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Facultatea de Automatica si Calculatoare, TUIASI")]
-[assembly: AssemblyProduct("Chetionar Auto")]
+[assembly: AssemblyProduct("Chestionar Auto")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
