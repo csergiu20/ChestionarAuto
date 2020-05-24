@@ -85,15 +85,32 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="resources\questions\catB.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="resources\images\0.jpg" />
-    <Content Include="resources\questions\catB.json" />
-  </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="resources\images\10.jpg" />
+    <Content Include="resources\images\12.jpg" />
+    <Content Include="resources\images\16.jpg" />
+    <Content Include="resources\images\19.jpg" />
+    <Content Include="resources\images\2.jpg" />
+    <Content Include="resources\images\20.jpg" />
+    <Content Include="resources\images\22.jpg" />
+    <Content Include="resources\images\25.jpg" />
+    <Content Include="resources\images\28.jpg" />
+    <Content Include="resources\images\30.jpg" />
+    <Content Include="resources\images\34.jpg" />
+    <Content Include="resources\images\39.jpg" />
+    <Content Include="resources\images\42.jpg" />
+    <Content Include="resources\images\48.jpg" />
+    <Content Include="resources\images\5.jpg" />
+    <Content Include="resources\images\7.jpg" />
+    <Content Include="resources\images\8.jpg" />
+    <Content Include="resources\images\default.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>XCOPY "$(SolutionDir)\Proiect_IP_ChestionarAuto\resources" "$(TargetDir)resources\" /S /Y</PostBuildEvent>

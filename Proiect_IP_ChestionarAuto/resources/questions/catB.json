@@ -1,56 +1,470 @@
 [
   {
-    "title": "unu",
+    "title": "Cum procedează conducătorul de vehicul care intenționează să circule pe direcția înainte printr-o intersecție nedirijată?",
     "options": {
-      "a1": true,
-      "b1": false,
-      "c1": false
+      "reduce viteza și acordă prioritate tuturor vehiculelor": false,
+      "reduce viteza și acordă prioritate vehiculelor care vin din dreapta sa": true,
+      " reduce viteza și acordă prioritate vehiculelor care circulă din sens opus și urmează să schimbe direcția de mers spre stânga": false
     },
-    "image": "0.jpg"
+    "image": "default.jpg"
   },
   {
-    "title": "doi",
+    "title": "Care dintre cele trei autovehicule a parcat regulamentar?",
     "options": {
-      "a2": true,
-      "b2": true,
-      "c2": false
+      "niciunul": true,
+      "autoturismele 1 și 2": false,
+      "autoturismul 3": false
     },
-    "image": "0.jpg"
+    "image": "2.jpg"
   },
   {
-    "title": "trei",
+    "title": "Precizați în care situație vehiculele enumerate mai jos au prioritate de trecere:",
     "options": {
-      "a3": true,
-      "b3": true,
-      "c3": true
+      "autovehiculele din serviciile regulate de transport public, care se pun în mișcare din stație": false,
+      "vehiculele aflate în sensul giratoriu, față de cele care se pregătesc să intre în sensul giratoriu": true,
+      " vehiculele care execută manevra de întoarcere": false
     },
-    "image": "0.jpg"
+    "image": "default.jpg"
   },
   {
-    "title": "patru",
+    "title": "La întâlnirea cărui indicator conducătorul auto nu are prioritate de trecere?",
     "options": {
-      "a4": false,
-      "b4": false,
-      "c4": true
+      "Prioritate pentru circulația din sens invers": true,
+      "Drum cu prioritate": false,
+      "Prioritate față de circulația din sens invers": false
     },
-    "image": "0.jpg"
+    "image": "default.jpg"
   },
   {
-    "title": "cinci",
+    "title": "Este permisă folosirea luminilor de ceață noaptea, dacă cerul este senin?",
     "options": {
-      "a5": false,
-      "b5": true,
-      "c5": true
+      "Regulamentul nu precizează": false,
+      "da": false,
+      "nu": true
     },
-    "image": "0.jpg"
+    "image": "5.jpg"
   },
   {
-    "title": "sase",
+    "title": "La circulația pe autostrăzi, conducătorului auto îi este interzis:",
     "options": {
-      "a6": false,
-      "b6": true,
-      "c6": false
+      "să oprească pentru a remedia o defecțiune": false,
+      "să depășească alte autovehicule": false,
+      "să staționeze pe banda de urgență, cu excepția cazurilor justificate": true
     },
-    "image": "0.jpg"
+    "image": "default.jpg"
+  },
+  {
+    "title": "În această situație opriți:",
+    "options": {
+      "la linia transversală": true,
+      " în dreptul semaforului": false,
+      "pe trecerea pentru pietoni": false
+    },
+    "image": "7.jpg"
+  },
+  {
+    "title": "Pentru a depăși acești bicicliști poți trece peste linia continuă?",
+    "options": {
+      "nu": true,
+      "da": false,
+      "prin excepție, nu se consideră depășire în cazul bicicliștilor": false
+    },
+    "image": "8.jpg"
+  },
+  {
+    "title": "Conducătorii de vehicule trebuie să respecte regulile de circulație, generale și particulare, în următoarea ordine:",
+    "options": {
+      "semnalele, indicațiile și dispozițiile polițistului rutier semnalele speciale de avertizare, luminoase sau sonore, ale autovehiculelor cu regim de circulație prioritară; semnalizarea temporară;": true,
+      "semnalele speciale de avertizare, luminoase sau sonore, ale autovehiculelor cu regim de circulație prioritară semnalele, indicațiile și dispozițiile polițistului rutier; semnalizarea temporară.": false,
+      "semnalele, indicațiile și dispozițiile polițistului rutier semnalizarea temporară; semnalele speciale de avertizare, luminoase sau sonore, ale autovehiculelor cu regim de circulație prioritară;": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Cum procedați în prima intersecție?",
+    "options": {
+      "acordați prioritate de trecere tuturor vehiculelor care circulă în intersecție": false,
+      "aplicați regula priorității de dreapta": true,
+      "acordați prioritate de trecere numai vehiculelor care circulă din stânga": false
+    },
+    "image": "10.jpg"
+  },
+  {
+    "title": "Vă este permis să parcați vehiculul pe drumurile publice:",
+    "options": {
+      "acolo unde circulația în ambele sensuri se desfășoară fără dificultate": false,
+      "acolo unde nu există parcări amenajate": false,
+      "în locurile special amenajate și semnalizate prin indicatoare și marcaje rutiere": true
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Care dintre vehicule trebuie să oprească la semnalul polițistului?",
+    "options": {
+      "toate vehiculele": false,
+      "tramvaiele și autoturismul": true,
+      "bicicleta": false
+    },
+    "image": "12.jpg"
+  },
+  {
+    "title": "Cui îi revine obligația efectuării inspecțiilor tehnice periodice, precum și a respectării periodicității acestora?",
+    "options": {
+      "unităților service": false,
+      "Registrului Auto Român": false,
+      "deținătorului legal al autovehiculului": true
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Pentru a conduce ecologic un autovehicul, se recomandă:",
+    "options": {
+      "utilizarea climatizării numai în situațiile absolut necesare": true,
+      "utilizarea climatizării numai în cazul traseelor scurte": false,
+      "utilizarea climatizării numai pe timp de noapte": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Ce vehicule pot fi depășite, prin excepție, pe un pod?",
+    "options": {
+      "tractoarele și alte autovehicule lente": false,
+      "niciun vehicul": false,
+      "vehiculele cu tracțiune animală, motociclete fără ataș și biciclete": true
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Care dintre indicatoare conferă prioritatea de trecere?",
+    "options": {
+      "indicatorul 3": false,
+      "indicatorul 1": true,
+      "indicatorul 2": false
+    },
+    "image": "16.jpg"
+  },
+  {
+    "title": "Luminile de poziție se folosesc, pe timp de zi, atunci când vehiculul este oprit:",
+    "options": {
+      "din cauza unor avarii": false,
+      "pentru urcarea sau coborârea pasagerilor": false,
+      "pentru că vizibilitatea este redusă": true
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Imobilizarea unei fracturi fără atele se face cu:",
+    "options": {
+      "eșarfe și triunghiuri de pânză": true,
+      "o folie de material plastic": false,
+      "carton rigid": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Indicatorul interzice:",
+    "options": {
+      "oprirea pe o distanță de 50 m de la locul în care este instalat": false,
+      "oprirea din dreptul lui până la prima intersecție": false,
+      "staționarea din dreptul lui până la prima intersecție": true
+    },
+    "image": "19.jpg"
+  },
+  {
+    "title": "Camionul este staționat. Cine încalcă legea dacă încercați să-l depășiți?",
+    "options": {
+      "conducătorul autocamionului": true,
+      "dumneavoastră": false,
+      "atât conducătorul autocamionului, cât și dumneavoastră": false
+    },
+    "image": "20.jpg"
+  },
+  {
+    "title": "Manevra de evitare, prin schimbarea direcției de mers, a unui obstacol aflat pe sensul dvs. de circulație, urmată de revenirea pe același sens, constituie:",
+    "options": {
+      "ocolire": false,
+      "situație de urgență": false,
+      "depășire": true
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Indicatorul interzice accesul:",
+    "options": {
+      "bicicletelor": false,
+      "mopedelor": true,
+      "motocicletelor": false
+    },
+    "image": "22.jpg"
+  },
+  {
+    "title": "Se interzice depășirea:",
+    "options": {
+      "în zonele cu trafic intens;": false,
+      "atunci când se încalcă marcajul continuu longitudinal, chiar și numai cu roțile de pe partea stângă;": true,
+      "când se încalcă marcajul discontinuu longitudinal.": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Aveți obligația de a opri imediat autovehiculul la semnalele adresate de:",
+    "options": {
+      "ofițerii sau subofițerii Jandarmeriei Române": false,
+      "polițiștii comunitari": false,
+      "agenții de cale ferată, la trecerile la nivel": true
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Autoturismul semnalizează intenția de a se pune în mișcare. Puteți efectua depășirea?",
+    "options": {
+      "nu, vehiculele care pleacă de pe loc au prioritate": false,
+      "nu, deoarece a semnalizat corect": false,
+      "da, procedați regulamentar": true
+    },
+    "image": "25.jpg"
+  },
+  {
+    "title": "Este permisă schimbarea direcției de mers spre stânga de către conducătorul autovehiculului încadrat corespunzător pe banda de circulație, dacă semaforul pentru această manevră indică semnalul verde, iar cel pentru direcția înainte, semnalul roșu?",
+    "options": {
+      "nu, deoarece semafoarele sunt defazate": false,
+      "nu, deoarece semafoarele nu sunt defazate": true,
+      "nu, deoarece unul dintre semnale este roșu": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "În ce situaţie se reţine permisul de conducere?",
+    "options": {
+      "atunci când nu se respectă obligaţia de reducere a vitezei;": false,
+      "atunci când nu se respectă normele referitoare la prioritatea de trecere a pietonilor;": true,
+      "atunci când se încalcă normele legale referitoare la staţionare;": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Indicatorul semnifică:",
+    "options": {
+      "reducerea numărului benzilor de circulaţie;": false,
+      "îngustare temporară a drumului;": true,
+      "terminarea benzii de circulaţie din stânga părţii carosabile;": false
+    },
+    "image": "28.jpg"
+  },
+  {
+    "title": "În care dintre situaţiile prezentate este interzisă depăşirea vehiculelor pe drumurile publice?",
+    "options": {
+      "la întâlnirea indicatorului Circulaţie în ambele sensuri;": false,
+      "la o distanţă mai mică de 50 m de staţia de tramvai, când acesta este oprit;": false,
+      "la trecerile pentru pietoni prevăzute cu indicatoare şi marcaje;": true
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Cum este corect să procedaţi dacă părăsiţi drumul prioritar?",
+    "options": {
+      "aveţi prioritate, deoarece vă aflaţi pe un drum prioritar;": false,
+      "cedaţi trecerea vehiculelor care vin din faţă;": false,
+      "cedaţi trecerea vehiculelor care vin din dreapta;": true
+    },
+    "image": "30.jpg"
+  },
+  {
+    "title": "Semaforul de avertizare constituit dintr-un corp de iluminat de culoare galbenă intermitentă vă obligă:",
+    "options": {
+      "să acordaţi prioritate de trecere;": false,
+      "să circulaţi cu viteză redusă;": true,
+      "să opriţi în orice situaţie;": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "La trecerile pentru pietoni nesemaforizate, semnalizate corespunzător, când drumul are cel mult o bandă pe sens, iar pietonii aflaţi pe trotuar, în imediata apropiere a părţii carosabile, intenţionează să se angajeze în traversare, trebuie:",
+    "options": {
+      "să circulaţi cu o viteză care să nu depăşească 30 km/h în localităţi sau 50 km/h în afara acestora;": true,
+      "să reduceţi brusc viteza şi să acordaţi prioritate de trecere pietonilor care au acest drept;": false,
+      "nu aveţi nicio obligaţie legală şi nici vreo răspundere în cazul unui eventual accident;": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Conducătorilor de vehicule le este interzis:",
+    "options": {
+      "să profereze injurii;": true,
+      "să săvârşească acte sau gesturi obscene;": true,
+      "să adreseze celorlalţi participanţi la trafic expresii jignitoare sau vulgare": true
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Care dintre autovehicule va trece al doilea prin intersecţia prezentată?",
+    "options": {
+      "autoturismul roşu;": false,
+      "autoturismul verde;": true,
+      "autocamionul;": false
+    },
+    "image": "34.jpg"
+  },
+  {
+    "title": "Cum se penalizează pătrunderea într-o intersecţie dirijată prin semafoare, dacă prin aceasta se produce blocarea circulaţiei în intersecţie?",
+    "options": {
+      "cu amendă contravenţională şi aplicarea punctelor de penalizare;": true,
+      "cu suspendarea exercitării dreptului de a conduce autovehicule pe o perioadă de 30 de zile;": false,
+      "cu amendă contravenţională;": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "La cererea poliţistului rutier, împreună cu reprezentantul autorităţilor abilitate, conducătorul auto este obligat:",
+    "options": {
+      "să prezinte documentele de călătorie;": false,
+      "să-l transporte la unitatea de poliţie;": false,
+      "să permită controlul stării tehnice a vehiculului, precum şi al bunurilor transportate;": true
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Principala cauză a exploziei pneului în timpul mersului este:",
+    "options": {
+      "umflarea insuficientă;": false,
+      "umflarea exagerată;": true,
+      "uzura moderată;": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Poate staţiona noaptea, pe un drum public, remorca unui autoturism?",
+    "options": {
+      "nu;": true,
+      "da, dacă drumul este iluminat;": false,
+      "da, dacă aceasta este semnalizată cu triunghiuri reflectorizante;": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Panoul de sub indicator permite:",
+    "options": {
+      "staţionarea mijloacelor de transport public de persoane în intervalul menţionat;": false,
+      "staţionarea în timpul orelor menţionate;": false,
+      "staţionarea în afara intervalului orar menţionat;": true
+    },
+    "image": "39.jpg"
+  },
+  {
+    "title": "În care dintre situaţii este interzisă depăşirea?",
+    "options": {
+      "în apropierea vârfurilor de rampă, când vizibilitatea este redusă sub 50 m;": true,
+      "în curbe, dacă vizibilitatea este redusă sub 50 m;": true,
+      "la întâlnirea indicatorului Drum cu prioritate;": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Prioritatea de trecere se acordă în următoarea situaţie:",
+    "options": {
+      "la întâlnirea indicatorului Prioritate pentru circulaţia din sens invers;": true,
+      "la întâlnirea indicatorului Intersecţie cu un drum fără prioritate;": false,
+      "la întâlnirea indicatorului Sfârşitul drumului cu prioritate;": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Care dintre cele trei vehicule va trece ultimul prin intersecţie?",
+    "options": {
+      "autobuzul;": false,
+      "autoturismul;": true,
+      "autocamioneta mov;": false
+    },
+    "image": "42.jpg"
+  },
+  {
+    "title": "Ce trebuie să aveţi în vedere atunci când intenţionaţi să depăşiţi atât biciclişti, cât şi grupuri de pietoni care se deplasează pe carosabil?",
+    "options": {
+      "puteţi depăşi numai după ce pietonii şi bicicliştii v-au făcut semn în acest sens;": false,
+      "respectaţi prevederile legale;": true,
+      "bicicliştii şi pietonii pot fi depăşiţi numai dacă distanţa laterală este de 3 m;": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "În situaţia în care poliţistul se află cu faţa la un autovehicul care se apropie, având braţul drept întins orizontal, conducătorul auto trebuie:",
+    "options": {
+      "să oprească, deoarece semnalul i se adresează;": false,
+      "să continue deplasarea, deoarece semnalul nu i se adresează;": true,
+      "să schimbe direcţia de mers spre stânga;": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Care dintre conducătorii de vehicule, ce se apropie simultan de o intersecţie, are prioritate de trecere, în situaţia în care unul întâlneşte indicatorul Oprire, iar celălalt indicatorul Cedează trecerea?",
+    "options": {
+      "conducătorul care întâlneşte indicatorul Cedează trecerea;": false,
+      "conducătorul care circulă din dreapta;": true,
+      "conducătorul care întâlneşte indicatorul Oprire;": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Sustragerea de la recoltarea probelor biologice, în vederea stabilirii alcoolemiei, constituie:",
+    "options": {
+      "infracţiune, şi atrage anularea permisului de conducere;": true,
+      "contravenţie, şi se pedepseşte cu închisoare;": false,
+      "contravenţie, şi atrage reţinerea permisului de conducere;": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Pentru a conduce ecologic un autovehicul, se recomandă:",
+    "options": {
+      "folosirea motorului la relanti, în cazul în care staţionaţi mai mult timp în acelaşi loc;": false,
+      "menţinerea unei viteze constante, de preferinţă medie;": true,
+      "oprirea motorului în timp ce coborâţi o pantă, pentru a economisi carburant;": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Indicatorul permite accesul:",
+    "options": {
+      "vehiculelor fără motor;": true,
+      "mopedelor şi motocicletelor;": false,
+      "autovehiculelor;": false
+    },
+    "image": "48.jpg"
+  },
+  {
+    "title": "Ce trebuie să faceţi pentru evitarea complicaţiilor în cazul unei fracturi?",
+    "options": {
+      "să imobilizaţi zona fracturată;": true,
+      "să sterilizaţi şi să pansaţi zona fracturată;": false,
+      "să aplicaţi un garou de cauciuc deasupra fracturii; ": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Oprirea este interzisă:",
+    "options": {
+      "pe drumurile publice unde circulă troleibuze şi tramvaie;": false,
+      "la o distanţă mai mică de 25 m faţă de trecerea pentru pietoni;": true,
+      "în zona de staţionare cu durată limitată;": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "În care dintre situaţii oprirea este interzisă:",
+    "options": {
+      "pe străzile cu sens unic;": false,
+      "în intersecţiile cu sens giratoriu;": true,
+      "în dreptul indicatorului Parcarea interzisă;": false
+    },
+    "image": "default.jpg"
+  },
+  {
+    "title": "Ce culoare pot avea lămpile cu lumină intermitentă din spatele autovehiculului?",
+    "options": {
+      "roşie sau albă;": false,
+      "roşie sau galbenă;": true,
+      "galbenă sau albă;": false
+    },
+    "image": "default.jpg"
   }
 ]

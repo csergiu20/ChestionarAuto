@@ -5,11 +5,11 @@ namespace Proiect_IP_ChestionarAuto
 {
     public partial class MainForm : Form
     {
-        private const int MaxQuestions = 3;
+        private const int MaxQuestions = 26;
         private const int MaxWrongAnswers = 5;
 
         private const string ImagesPath = "resources\\images\\";
-        private const string DefaultImagePath = "resources\\images\\0.jpg";
+        private const string DefaultImagePath = "resources\\images\\default.jpg";
         private const string QuestionsPath = "resources\\questions\\";
 
         public MainForm()
