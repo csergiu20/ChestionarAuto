@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Proiect_IP_ChestionarAuto
+namespace ChestionarAuto
 {
     internal static class RandomNumbers
     {

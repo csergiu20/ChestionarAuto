@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C6303282-5549-4275-A86A-B87DE705D1B8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Proiect_IP_ChestionarAuto</RootNamespace>
-    <AssemblyName>Proiect_IP_ChestionarAuto</AssemblyName>
+    <RootNamespace>ChestionarAuto</RootNamespace>
+    <AssemblyName>ChestionarAuto</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -148,6 +148,6 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>XCOPY "$(SolutionDir)\Proiect_IP_ChestionarAuto\resources" "$(TargetDir)resources\" /S /Y</PostBuildEvent>
+    <PostBuildEvent>XCOPY "$(SolutionDir)\ChestionarAuto\resources" "$(TargetDir)resources\" /S /Y</PostBuildEvent>
   </PropertyGroup>
 </Project>

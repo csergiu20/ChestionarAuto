@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace Proiect_IP_ChestionarAuto
+namespace ChestionarAuto
 {
     partial class MainForm
     {

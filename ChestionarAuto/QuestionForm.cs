@@ -4,9 +4,9 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Proiect_IP_ChestionarAuto.Properties;
+using ChestionarAuto.Properties;
 
-namespace Proiect_IP_ChestionarAuto
+namespace ChestionarAuto
 {
     public partial class QuestionForm : Form
     {

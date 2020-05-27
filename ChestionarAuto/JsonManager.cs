@@ -2,7 +2,7 @@
 using System.IO;
 using Newtonsoft.Json;
 
-namespace Proiect_IP_ChestionarAuto
+namespace ChestionarAuto
 {
     internal class JsonManager
     {

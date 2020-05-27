@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Proiect_IP_ChestionarAuto
+namespace ChestionarAuto
 {
     static class Program
     {

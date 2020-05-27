@@ -1,4 +1,4 @@
-﻿namespace Proiect_IP_ChestionarAuto
+﻿namespace ChestionarAuto
 {
     partial class QuestionForm
     {
